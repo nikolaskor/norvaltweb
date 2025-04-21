@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en" data-theme="light">
       <body className={`${manrope.variable} font-sans`}>
         <NavigationMain />
-        <main className="min-h-screen bg-base-100 pt-16">{children}</main>
+        <main className="min-h-screen bg-base-100">{children}</main>
         <FooterMain />
       </body>
     </html>

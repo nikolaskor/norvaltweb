@@ -1,7 +1,7 @@
 import { Hero } from "@/components/ui/animated-hero";
 import { PartnersSection } from "@/components/sections/partners-section";
-import { BenefitsSection } from "@/components/sections/benefits-section";
-import { ServicesPreview } from "@/components/sections/services-preview";
+import { BenefitsSection } from "@/components/sections/BenefitsSection";
+import { ServicesPreview } from "@/components/sections/FeatureSection";
 
 export default function Home() {
   return (
