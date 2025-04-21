@@ -1,5 +1,5 @@
 import { Hero } from "@/components/ui/animated-hero";
-import { PartnersSection } from "@/components/sections/partners-section";
+import { PartnersSection } from "@/components/sections/PartnersSection";
 import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { ServicesPreview } from "@/components/sections/FeatureSection";
 
