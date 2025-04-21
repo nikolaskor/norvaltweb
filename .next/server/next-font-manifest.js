@@ -1,1 +1,0 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/nikolaiskor/Documents/NodeJS Workspace/norvaltweb/app/layout\":[\"static/media/3534416bbfdcc9be-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
