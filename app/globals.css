@@ -3,8 +3,23 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    /* Define radius based on common Tailwind lg value */
+    --radius: 0.75rem;
+    /* Potentially add other missing variables here if needed */
+    /* --background: ... ; */
+    /* --foreground: ... ; */
+  }
+
   body {
-    @apply bg-white text-gray-900;
+    @apply bg-[#F5F5F5] text-[#171A1F];
+  }
+
+  /* Add dark mode variables if applicable */
+  .dark {
+    /* --radius: 0.75rem; */ /* Keep consistent or change for dark mode */
+    /* --background: ... ; */
+    /* --foreground: ... ; */
   }
 }
 

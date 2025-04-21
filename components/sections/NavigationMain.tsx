@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 import {
   Bot, // Example Icon for Chat Agent
@@ -68,14 +69,17 @@ export default function NavigationMain() {
         {/* Logo */}
         <Link
           href="/"
-          className="mr-8 flex items-center space-x-2 transition-opacity hover:opacity-80"
+          className="mr-8 flex items-center transition-opacity hover:opacity-80"
+          aria-label="Norvalt Home"
         >
-          {" "}
-          {/* Increased margin-right and added hover effect */}
-          {/* Placeholder for logo if you have one */}
-          {/* <img src="/logo.svg" alt="Norvalt Logo" className="h-8 w-auto" /> */}
-          <span className="text-xl font-bold tracking-tight">Norvalt</span>{" "}
-          {/* Increased font size and added tracking */}
+          <Image
+            src="/logos/norvalt-logo-color.png"
+            alt="Norvalt Logo"
+            width={160}
+            height={40}
+            className="h-10 w-auto"
+            priority
+          />
         </Link>
         {/* Desktop Navigation */}
         <NavigationMenu className="hidden lg:flex">
@@ -154,18 +158,11 @@ export default function NavigationMain() {
           <div className="hidden lg:flex gap-3">
             {" "}
             {/* Increased gap */} {/* Use lg breakpoint */}
-            <Button
-              variant="ghost"
-              className="h-12 px-5 text-base font-medium transition-colors" /* Increased height, padding, font size */
-            >
+            <Button variant="ghost" size="lg">
               Logg inn
             </Button>
             <Link href="/contact" passHref>
-              <Button
-                className="h-12 px-6 text-base font-medium" /* Increased height, padding, font size */
-              >
-                Kom i gang
-              </Button>
+              <Button size="lg">Kom i gang</Button>
             </Link>
           </div>
           {/* Mobile Menu Trigger */}
