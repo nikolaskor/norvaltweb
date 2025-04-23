@@ -1,85 +1,98 @@
-import { Bot, Workflow, Code, MessageSquare } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import {
+  BellIcon,
+  CalendarIcon,
+  FileTextIcon,
+  GlobeIcon,
+  InputIcon,
+} from "@radix-ui/react-icons";
+import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 
-const services = [
+const features = [
   {
-    title: "AI Chat Agents",
-    description:
-      "24/7 customer support and sales automation with intelligent chatbots that understand your business.",
-    icon: MessageSquare,
-    href: "/services/chat-agents",
+    Icon: FileTextIcon,
+    name: "Save your files",
+    description: "We automatically save your files as you type.",
+    href: "/",
+    cta: "Learn more",
+    // Remember to add src attribute to the img tag or replace it
+    background: (
+      <img className="absolute -right-20 -top-20 opacity-60" alt="" />
+    ),
+    className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
   },
   {
-    title: "Workflow Automation",
-    description:
-      "Streamline your business processes with smart workflows that reduce manual work and errors.",
-    icon: Workflow,
-    href: "/services/workflow-automation",
+    Icon: InputIcon,
+    name: "Full text search",
+    description: "Search through all your files in one place.",
+    href: "/",
+    cta: "Learn more",
+    // Remember to add src attribute to the img tag or replace it
+    background: (
+      <img className="absolute -right-20 -top-20 opacity-60" alt="" />
+    ),
+    className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
   },
   {
-    title: "Custom AI Solutions",
-    description:
-      "Tailored AI solutions designed specifically for your business needs and industry requirements.",
-    icon: Bot,
-    href: "/services/custom-ai",
+    Icon: GlobeIcon,
+    name: "Multilingual",
+    description: "Supports 100+ languages and counting.",
+    href: "/",
+    cta: "Learn more",
+    // Remember to add src attribute to the img tag or replace it
+    background: (
+      <img className="absolute -right-20 -top-20 opacity-60" alt="" />
+    ),
+    className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
   },
   {
-    title: "Web & App Development",
+    Icon: CalendarIcon,
+    name: "Calendar",
+    description: "Use the calendar to filter your files by date.",
+    href: "/",
+    cta: "Learn more",
+    // Remember to add src attribute to the img tag or replace it
+    background: (
+      <img className="absolute -right-20 -top-20 opacity-60" alt="" />
+    ),
+    className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
+  },
+  {
+    Icon: BellIcon,
+    name: "Notifications",
     description:
-      "Modern, AI-powered web and mobile applications that help you serve customers better.",
-    icon: Code,
-    href: "/services/development",
+      "Get notified when someone shares a file or mentions you in a comment.",
+    href: "/",
+    cta: "Learn more",
+    // Remember to add src attribute to the img tag or replace it
+    background: (
+      <img className="absolute -right-20 -top-20 opacity-60" alt="" />
+    ),
+    className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
   },
 ];
 
+// Exporting as ServicesPreview to match the import in app/page.tsx
 export function ServicesPreview() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-16 md:py-24">
+      {/* Added container and title for context */}
       <div className="container px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            AI-Powered Solutions for Every Business Need
+            Explore Our Features
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground">
-            From customer service to process automation, we help SMBs leverage
-            the power of AI to transform their operations.
+            Discover how our platform can streamline your workflow and boost
+            productivity.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-          {services.map((service) => (
-            <Link
-              key={service.title}
-              href={service.href}
-              className="group relative overflow-hidden rounded-lg border bg-background p-6 md:p-8 hover:shadow-lg transition-all flex flex-col h-full"
-            >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="p-3 rounded-lg bg-primary/10 text-primary flex-shrink-0">
-                  <service.icon className="h-6 w-6" />
-                </div>
-                <h3 className="text-xl md:text-2xl font-semibold group-hover:text-primary transition-colors">
-                  {service.title}
-                </h3>
-              </div>
-              <p className="text-muted-foreground mb-6 flex-grow">
-                {service.description}
-              </p>
-              <Button
-                variant="link"
-                className="p-0 h-auto text-primary justify-start gap-1 self-start"
-              >
-                Learn more
-                <span
-                  aria-hidden="true"
-                  className="transition-transform group-hover:translate-x-1"
-                >
-                  →
-                </span>
-              </Button>
-            </Link>
+        <BentoGrid className="lg:grid-rows-3 auto-rows-[22rem] lg:auto-rows-[unset]">
+          {" "}
+          {/* Adjusted grid rows */}
+          {features.map((feature) => (
+            <BentoCard key={feature.name} {...feature} />
           ))}
-        </div>
+        </BentoGrid>
       </div>
     </section>
   );

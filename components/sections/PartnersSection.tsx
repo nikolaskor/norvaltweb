@@ -1,56 +1,102 @@
-import { Marquee } from "@/components/ui/marquee";
+import { InfiniteSlider } from "@/components/ui/infinite-slider";
+import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 
-const partners = [
+// Placeholder logo data - replace with actual partner logos if available
+const logos = [
   {
-    name: "OpenAI",
-    logo: "/logos/openai.svg",
+    id: "logo-2",
+    description: "Figma",
+    image: "https://www.shadcnblocks.com/images/block/logos/figma.svg",
+    className: "h-7 w-auto",
   },
   {
-    name: "Microsoft Azure",
-    logo: "/logos/azure.svg",
+    id: "logo-3",
+    description: "Next.js",
+    image: "https://www.shadcnblocks.com/images/block/logos/nextjs.svg",
+    className: "h-7 w-auto",
   },
   {
-    name: "Google Cloud",
-    logo: "/logos/google-cloud.svg",
+    id: "logo-6",
+    description: "Supabase",
+    image: "https://www.shadcnblocks.com/images/block/logos/supabase.svg",
+    className: "h-7 w-auto",
   },
   {
-    name: "AWS",
-    logo: "/logos/aws.svg",
+    id: "logo-8",
+    description: "Vercel",
+    image: "https://www.shadcnblocks.com/images/block/logos/vercel.svg",
+    className: "h-7 w-auto",
+  },
+  // Add more logos as needed, repeating the structure
+  {
+    id: "logo-2-repeat",
+    description: "Figma",
+    image: "https://www.shadcnblocks.com/images/block/logos/figma.svg",
+    className: "h-7 w-auto",
   },
   {
-    name: "IBM",
-    logo: "/logos/ibm.svg",
+    id: "logo-3-repeat",
+    description: "Next.js",
+    image: "https://www.shadcnblocks.com/images/block/logos/nextjs.svg",
+    className: "h-7 w-auto",
   },
   {
-    name: "NVIDIA",
-    logo: "/logos/nvidia.svg",
+    id: "logo-6-repeat",
+    description: "Supabase",
+    image: "https://www.shadcnblocks.com/images/block/logos/supabase.svg",
+    className: "h-7 w-auto",
+  },
+  {
+    id: "logo-8-repeat",
+    description: "Vercel",
+    image: "https://www.shadcnblocks.com/images/block/logos/vercel.svg",
+    className: "h-7 w-auto",
   },
 ];
 
 export function PartnersSection() {
   return (
-    <section className="py-16 md:py-24 bg-background/50 relative">
-      <div className="container px-4 md:px-6">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-center mb-10 md:mb-12">
-          Helping companies implement AI with our partner technology
+    <section className="py-16">
+      <div className="container mx-auto">
+        <h2 className="text-3xl font-semibold tracking-tight text-center mb-4">
+          Our Partner&apos;s Technologies
         </h2>
-      </div>
-      <Marquee className="pb-16 md:pb-24" pauseOnHover speed={40}>
-        {partners.map((partner) => (
-          <div
-            key={partner.name}
-            className="mx-10 md:mx-16 flex items-center justify-center grayscale hover:grayscale-0 transition-all"
+        <p className="text-lg text-muted-foreground text-center mb-12">
+          We integrate with the best-in-class platforms you already use.
+        </p>
+        <div className="relative h-[100px] w-full overflow-hidden">
+          <InfiniteSlider
+            className="flex h-full w-full items-center"
+            duration={40} // Slightly slower duration
+            gap={64} // Increased gap
           >
-            <div className="h-12 w-32 relative flex items-center">
-              <img
-                src={partner.logo}
-                alt={partner.name}
-                className="max-h-full max-w-full object-contain"
-              />
-            </div>
-          </div>
-        ))}
-      </Marquee>
+            {logos.map((logo) => (
+              <div
+                key={logo.id}
+                className="flex w-32 items-center justify-center"
+              >
+                <img
+                  src={logo.image}
+                  alt={logo.description}
+                  className={logo.className}
+                  // Add loading="lazy" for performance
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </InfiniteSlider>
+          <ProgressiveBlur
+            className="pointer-events-none absolute top-0 left-0 h-full w-[150px] bg-gradient-to-r from-background to-transparent" // Use background color variable
+            direction="left"
+            blurIntensity={0.5} // Adjust blur intensity if needed
+          />
+          <ProgressiveBlur
+            className="pointer-events-none absolute top-0 right-0 h-full w-[150px] bg-gradient-to-l from-background to-transparent" // Use background color variable
+            direction="right"
+            blurIntensity={0.5} // Adjust blur intensity if needed
+          />
+        </div>
+      </div>
     </section>
   );
 }

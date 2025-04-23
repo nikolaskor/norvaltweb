@@ -9,14 +9,14 @@ export default function Home() {
       {/* Hero Section */}
       <Hero />
 
-      {/* Benefits Section */}
-      <BenefitsSection />
-
       {/* Partners Section */}
       <PartnersSection />
 
       {/* Services Preview */}
       <ServicesPreview />
+
+      {/* Benefits Section */}
+      <BenefitsSection />
     </>
   );
 }
