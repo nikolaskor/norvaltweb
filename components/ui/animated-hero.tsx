@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 function Hero() {
   const [titleNumber, setTitleNumber] = useState(0);
   const titles = useMemo(
-    () => ["amazing", "new", "wonderful", "beautiful", "smart"],
+    () => ["AI Agenter", "Automatisering", "Kunstig Intelligens"],
     []
   );
 
@@ -19,7 +19,7 @@ function Hero() {
       } else {
         setTitleNumber(titleNumber + 1);
       }
-    }, 2000);
+    }, 1500);
     return () => clearTimeout(timeoutId);
   }, [titleNumber, titles]);
 
@@ -29,12 +29,12 @@ function Hero() {
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
           <div>
             <Button variant="secondary" size="sm" className="gap-4">
-              Read our launch article <MoveRight className="w-4 h-4" />
+              Register for a webinar <MoveRight className="w-4 h-4" />
             </Button>
           </div>
           <div className="flex gap-4 flex-col">
             <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
-              <span className="text-primary">This is something</span>
+              <span className="text-primary">Vi hjelper deg å utforske</span>
               {/* Restore the animated text span */}
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
                 &nbsp;
