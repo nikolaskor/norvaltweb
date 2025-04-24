@@ -199,9 +199,9 @@ export default function NavigationMain() {
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
-            {/* Kom i gang Button */}
+            {/* Book a demo Button */}
             <Link href="/contact" passHref>
-              <Button size="lg">Kom i gang</Button>
+              <Button size="lg">Book a demo</Button>
             </Link>
           </div>
           {/* Mobile Menu Trigger */}
@@ -308,13 +308,13 @@ export default function NavigationMain() {
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
-                {/* Kom i gang Button (Mobile) */}
+                {/* Book a demo Button (Mobile) */}
                 <Link href="/contact" passHref>
                   <Button
                     className="h-12 text-base font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Kom i gang
+                    Book a demo
                   </Button>
                 </Link>
               </div>
