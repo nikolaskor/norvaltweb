@@ -22,6 +22,13 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ChevronDown } from "lucide-react";
 
 const solutions: {
   title: string;
@@ -60,6 +67,7 @@ const solutions: {
 
 export default function NavigationMain() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const [currentLanguage, setCurrentLanguage] = React.useState("NO");
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -93,7 +101,7 @@ export default function NavigationMain() {
               <NavigationMenuTrigger className="h-12 px-5 text-sm">
                 {" "}
                 {/* Increased height, padding, and font size */}
-                Løsninger
+                Services
               </NavigationMenuTrigger>
               <NavigationMenuContent className="z-[100] bg-white shadow-lg">
                 <ul className="grid w-[400px] gap-4 p-6 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
@@ -114,14 +122,26 @@ export default function NavigationMain() {
             </NavigationMenuItem>
             {/* Other Links */}
             <NavigationMenuItem>
-              <Link href="/industri" legacyBehavior passHref>
+              <Link href="/why-ai" legacyBehavior passHref>
                 <NavigationMenuLink
                   className={cn(
                     navigationMenuTriggerStyle(),
                     "h-12 px-5 text-sm"
                   )}
                 >
-                  Industri
+                  Why AI?
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/case-studies" legacyBehavior passHref>
+                <NavigationMenuLink
+                  className={cn(
+                    navigationMenuTriggerStyle(),
+                    "h-12 px-5 text-sm"
+                  )}
+                >
+                  Case Studies
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
@@ -133,7 +153,7 @@ export default function NavigationMain() {
                     "h-12 px-5 text-sm"
                   )}
                 >
-                  Om Oss
+                  About Us
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
@@ -145,7 +165,7 @@ export default function NavigationMain() {
                     "h-12 px-5 text-sm"
                   )}
                 >
-                  Kontakt Oss
+                  Contact
                 </NavigationMenuLink>
               </Link>
             </NavigationMenuItem>
@@ -157,10 +177,29 @@ export default function NavigationMain() {
           {/* Increased gap */}
           <div className="hidden lg:flex gap-3">
             {" "}
-            {/* Increased gap */} {/* Use lg breakpoint */}
-            <Button variant="ghost" size="lg">
-              Logg inn
-            </Button>
+            {/* Language Dropdown (Desktop) */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className="flex items-center gap-1"
+                >
+                  {/* TODO: Add flag icon based on currentLanguage */}
+                  {currentLanguage}
+                  <ChevronDown className="h-4 w-4 opacity-50" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => setCurrentLanguage("NO")}>
+                  {/* TODO: Add Norwegian flag icon */} NO
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setCurrentLanguage("EN")}>
+                  {/* TODO: Add British flag icon */} EN
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            {/* Kom i gang Button */}
             <Link href="/contact" passHref>
               <Button size="lg">Kom i gang</Button>
             </Link>
@@ -195,7 +234,7 @@ export default function NavigationMain() {
                 <span className="font-semibold text-base text-muted-foreground">
                   {" "}
                   {/* Increased font size */}
-                  Løsninger
+                  Services
                 </span>
                 {solutions.map((solution) => (
                   <Link
@@ -208,11 +247,18 @@ export default function NavigationMain() {
                   </Link>
                 ))}
                 <Link
-                  href="/industri"
+                  href="/why-ai"
                   className="text-base font-medium transition-colors hover:text-primary"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  Industri
+                  Why AI?
+                </Link>
+                <Link
+                  href="/case-studies"
+                  className="text-base font-medium transition-colors hover:text-primary"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Case Studies
                 </Link>
                 <Link
                   href="/om-oss"
@@ -231,17 +277,41 @@ export default function NavigationMain() {
               </nav>
               <div className="px-7 mt-8 flex flex-col gap-3">
                 {" "}
-                {/* Increased margin and gap */}
-                <Button
-                  variant="ghost"
-                  className="h-12 text-base font-medium" /* Increased height and font size */
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  Logg inn
-                </Button>
+                {/* Language Dropdown (Mobile) */}
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      className="h-12 text-base font-medium w-full justify-start flex items-center gap-2"
+                    >
+                      {/* TODO: Add flag icon based on currentLanguage */}
+                      {currentLanguage}
+                      <ChevronDown className="h-4 w-4 opacity-50" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start">
+                    <DropdownMenuItem
+                      onClick={() => {
+                        setCurrentLanguage("NO");
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      {/* TODO: Add Norwegian flag icon */} NO
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      onClick={() => {
+                        setCurrentLanguage("EN");
+                        setIsMobileMenuOpen(false);
+                      }}
+                    >
+                      {/* TODO: Add British flag icon */} EN
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+                {/* Kom i gang Button (Mobile) */}
                 <Link href="/contact" passHref>
                   <Button
-                    className="h-12 text-base font-medium" /* Increased height and font size */
+                    className="h-12 text-base font-medium"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     Kom i gang
