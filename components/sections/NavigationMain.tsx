@@ -20,14 +20,14 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+} from "@/components/ui/DropdownMenu";
 import { ChevronDown } from "lucide-react";
 
 const solutions: {
@@ -201,7 +201,7 @@ export default function NavigationMain() {
             </DropdownMenu>
             {/* Book a demo Button */}
             <Link href="/contact" passHref>
-              <Button size="lg">Book a demo</Button>
+              <Button size="lg">Book et møte</Button>
             </Link>
           </div>
           {/* Mobile Menu Trigger */}

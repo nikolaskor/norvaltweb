@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import { ChevronRight } from "lucide-react"; // Assuming ChevronRight is available
 
 export function CtaSection() {

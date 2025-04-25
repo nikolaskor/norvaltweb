@@ -1,5 +1,5 @@
 import { ArrowRight, Clock, DollarSign, LineChart, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 
 const benefits = [
   {
