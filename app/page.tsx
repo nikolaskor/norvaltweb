@@ -13,32 +13,14 @@ export default function Home() {
       {/* Partners Section */}
       <PartnersSection />
 
-      {/* Services Preview */}
-      <ServicesPreview />
-
       {/* Video Section */}
       <VideoSection />
+
+      {/* Services Preview */}
+      <ServicesPreview />
 
       {/* Benefits Section */}
       <BenefitsSection />
     </>
   );
 }
-
-const features = [
-  {
-    title: "AI-Powered Solutions",
-    description:
-      "Leverage cutting-edge artificial intelligence to automate complex tasks and workflows.",
-  },
-  {
-    title: "Cost-Effective",
-    description:
-      "Reduce operational costs and improve efficiency with our scalable automation solutions.",
-  },
-  {
-    title: "Expert Support",
-    description:
-      "Get dedicated support from our team of automation experts throughout your journey.",
-  },
-];
