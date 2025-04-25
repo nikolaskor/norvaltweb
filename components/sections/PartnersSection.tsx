@@ -56,19 +56,23 @@ const logos = [
 
 export function PartnersSection() {
   return (
-    <section className="py-16">
-      <div className="container mx-auto">
-        <h2 className="text-3xl font-semibold tracking-tight text-center mb-4">
-          Our Partner&apos;s Technologies
-        </h2>
-        <p className="text-lg text-muted-foreground text-center mb-12">
-          We integrate with the best-in-class platforms you already use.
-        </p>
+    <section className="py-16 md:py-24">
+      <div className="container px-4 md:px-6">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+            Teknologi du kan stole på
+          </h2>
+          <p className="text-lg md:text-xl text-muted-foreground">
+            Vi integrerer sømløst med ledende plattformer og verktøy, slik at du
+            får en enklere arbeidshverdag fra dag én.
+          </p>
+        </div>
+
         <div className="relative h-[100px] w-full overflow-hidden">
           <InfiniteSlider
             className="flex h-full w-full items-center"
-            duration={40} // Slightly slower duration
-            gap={64} // Increased gap
+            duration={40}
+            gap={64}
           >
             {logos.map((logo) => (
               <div
@@ -79,21 +83,20 @@ export function PartnersSection() {
                   src={logo.image}
                   alt={logo.description}
                   className={logo.className}
-                  // Add loading="lazy" for performance
                   loading="lazy"
                 />
               </div>
             ))}
           </InfiniteSlider>
           <ProgressiveBlur
-            className="pointer-events-none absolute top-0 left-0 h-full w-[150px] bg-gradient-to-r from-background to-transparent" // Use background color variable
+            className="pointer-events-none absolute top-0 left-0 h-full w-[150px] bg-gradient-to-r from-background to-transparent"
             direction="left"
-            blurIntensity={0.5} // Adjust blur intensity if needed
+            blurIntensity={0.5}
           />
           <ProgressiveBlur
-            className="pointer-events-none absolute top-0 right-0 h-full w-[150px] bg-gradient-to-l from-background to-transparent" // Use background color variable
+            className="pointer-events-none absolute top-0 right-0 h-full w-[150px] bg-gradient-to-l from-background to-transparent"
             direction="right"
-            blurIntensity={0.5} // Adjust blur intensity if needed
+            blurIntensity={0.5}
           />
         </div>
       </div>

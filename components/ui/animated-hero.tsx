@@ -25,17 +25,17 @@ function Hero() {
 
   return (
     <div className="w-full isolate">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="flex gap-8 py-20 lg:py-40 items-center justify-center flex-col">
           <div>
             <Button variant="secondary" size="sm" className="gap-4">
               Register for a webinar <MoveRight className="w-4 h-4" />
             </Button>
           </div>
-          <div className="flex gap-4 flex-col">
-            <h1 className="text-5xl md:text-7xl max-w-2xl tracking-tighter text-center font-regular">
+          <div className="flex gap-4 flex-col max-w-3xl">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl tracking-tighter text-center font-bold">
               <span className="text-primary">Vi hjelper deg å utforske</span>
-              {/* Restore the animated text span */}
+              {/* Animated text span */}
               <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
                 &nbsp;
                 {titles.map((title, index) => (
@@ -62,7 +62,7 @@ function Hero() {
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-2xl text-center">
+            <p className="text-lg md:text-xl text-muted-foreground text-center">
               Oppdag hvordan AI kan forenkle hverdagen, kutte kostnader og
               hjelpe bedriften din med å vokse—helt uten teknisk stress.
             </p>

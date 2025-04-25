@@ -8,11 +8,12 @@ export function VideoSection() {
       <div className="container px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
-            See How Our Automation Works
+            Hvorfor velge AI?
           </h2>
           <p className="text-lg md:text-xl text-muted-foreground">
-            Watch how Norvalt transforms manual processes into efficient,
-            automated workflows that save time and reduce costs.
+            Se hvordan Norvalt hjelper norske bedrifter med å spare tid, kutte
+            kostnader og bli mer konkurransedyktige gjennom skreddersydde
+            AI-løsninger.
           </p>
         </div>
 
@@ -27,7 +28,7 @@ export function VideoSection() {
 
         <div className="text-center">
           <Button size="lg" className="gap-2">
-            Schedule a Demo
+            Book en demo
             <ArrowRight className="h-4 w-4" />
           </Button>
         </div>
