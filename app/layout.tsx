@@ -18,10 +18,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" data-theme="light">
-      <body className={`${manrope.variable} font-sans`}>
+    <html lang="en" className="bg-white">
+      <body className={`${manrope.variable} font-sans bg-white`}>
         <NavigationMain />
-        <main className="min-h-screen bg-base-100">{children}</main>
+        <main className="min-h-screen">{children}</main>
         <CtaSection />
         <FooterMain />
       </body>

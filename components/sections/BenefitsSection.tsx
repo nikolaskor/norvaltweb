@@ -2,8 +2,7 @@
 
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/Button";
-import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import {
   IconClock,
@@ -57,9 +56,6 @@ export function BenefitsSection() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
           >
-            <Badge variant="outline" className="mb-3 md:mb-4">
-              Fordelene
-            </Badge>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3 md:mb-4">
               Transformer bedriften din med AI-automatisering
             </h2>

@@ -4,11 +4,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import { Layout, Pointer, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 interface TabContent {
-  badge: string;
   title: string;
   description: string;
   buttonText: string;
@@ -24,14 +22,12 @@ interface Tab {
 }
 
 interface Feature108Props {
-  badge?: string;
   heading?: string;
   description?: string;
   tabs?: Tab[];
 }
 
 const Feature108 = ({
-  badge = "shadcnblocks.com",
   heading = "A Collection of Components Built With Shadcn & Tailwind",
   description = "Join us to build flawless web solutions.",
   tabs = [
@@ -40,7 +36,6 @@ const Feature108 = ({
       icon: <Zap className="h-auto w-4 shrink-0" />,
       label: "Boost Revenue",
       content: {
-        badge: "Modern Tactics",
         title: "Make your site a true standout.",
         description:
           "Discover new web trends that help you craft sleek, highly functional sites that drive traffic and convert leads into customers.",
@@ -55,7 +50,6 @@ const Feature108 = ({
       icon: <Pointer className="h-auto w-4 shrink-0" />,
       label: "Higher Engagement",
       content: {
-        badge: "Expert Features",
         title: "Boost your site with top-tier design.",
         description:
           "Use stellar design to easily engage users and strengthen their loyalty. Create a seamless experience that keeps them coming back for more.",
@@ -70,7 +64,6 @@ const Feature108 = ({
       icon: <Layout className="h-auto w-4 shrink-0" />,
       label: "Stunning Layouts",
       content: {
-        badge: "Elite Solutions",
         title: "Build an advanced web experience.",
         description:
           "Lift your brand with modern tech that grabs attention and drives action. Create a digital experience that stands out from the crowd.",
@@ -86,9 +79,6 @@ const Feature108 = ({
     <section className="py-8 md:py-12">
       <div className="container mx-auto">
         <div className="flex flex-col items-center gap-3 md:gap-4 text-center">
-          <Badge variant="outline" className="mb-1 md:mb-2">
-            {badge}
-          </Badge>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3 md:mb-4 max-w-3xl">
             {heading}
           </h2>
@@ -128,9 +118,6 @@ const Feature108 = ({
                     className="grid place-items-center gap-8 md:gap-12 lg:gap-20 w-full lg:grid-cols-2 lg:gap-10"
                   >
                     <div className="flex flex-col gap-3 md:gap-5">
-                      <Badge variant="outline" className="w-fit bg-background">
-                        {tab.content.badge}
-                      </Badge>
                       <motion.h3
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}

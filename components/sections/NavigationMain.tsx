@@ -38,27 +38,27 @@ const solutions: {
 }[] = [
   {
     title: "Chat Agent",
-    href: "/losninger/chat-agent",
+    href: "/tjenester/chat-agent",
     description:
       "Intelligent kundeservice som svarer på spørsmål døgnet rundt.",
     icon: Bot,
   },
   {
     title: "Voice Agent",
-    href: "/losninger/voice-agent",
+    href: "/tjenester/voice-agent",
     description:
       "Talebasert kundeservice som håndterer telefonsamtaler automatisk.",
     icon: Mic,
   },
   {
     title: "Arbeidsflyt Automatisering",
-    href: "/losninger/arbeidsflyt-automatisering",
+    href: "/tjenester/workflow",
     description: "Automatiser rutineoppgaver og effektiviser arbeidsprosesser.",
     icon: Workflow,
   },
   {
     title: "AI Kurs og Rådgivning",
-    href: "/losninger/ai-kurs",
+    href: "/tjenester/kurs-og-radgivning",
     description:
       "Øk kompetansen internt med skreddersydde AI-kurs og rådgivning.",
     icon: GraduationCap,
@@ -103,10 +103,8 @@ export default function NavigationMain() {
                 {/* Increased height, padding, and font size */}
                 Services
               </NavigationMenuTrigger>
-              <NavigationMenuContent className="z-[100] bg-white shadow-lg">
-                <ul className="grid w-[400px] gap-4 p-6 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  {" "}
-                  {/* Increased gap and padding */}
+              <NavigationMenuContent className="z-[100] bg-white shadow-lg rounded-xl">
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
                   {solutions.map((solution) => (
                     <ListItem
                       key={solution.title}
@@ -329,7 +327,9 @@ export default function NavigationMain() {
 // Helper component for megamenu items
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a"> & { icon: React.ElementType }
+  React.ComponentPropsWithoutRef<"a"> & {
+    icon: React.ElementType;
+  }
 >(({ className, title, children, icon: Icon, ...props }, ref) => {
   return (
     <li>
@@ -337,18 +337,24 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "block select-none space-y-2 rounded-md p-4 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-orange-50/50 hover:text-orange-600",
             className
           )}
           {...props}
         >
           <div className="flex items-center gap-3">
-            <Icon className="h-5 w-5 text-primary" />
-            <div className="text-base font-medium leading-none">{title}</div>
+            <div className="flex h-10 w-10 items-center justify-center rounded-md bg-orange-50 text-orange-600">
+              <Icon className="h-5 w-5" />
+            </div>
+            <div>
+              <div className="text-sm font-medium leading-none mb-1">
+                {title}
+              </div>
+              <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                {children}
+              </p>
+            </div>
           </div>
-          <p className="line-clamp-2 text-sm leading-relaxed text-muted-foreground">
-            {children}
-          </p>
         </a>
       </NavigationMenuLink>
     </li>
