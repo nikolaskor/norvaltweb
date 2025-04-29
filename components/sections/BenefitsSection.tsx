@@ -41,7 +41,7 @@ const benefits = [
 
 export function BenefitsSection() {
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-b from-white to-slate-50/80 dark:from-gray-950 dark:to-gray-900 overflow-hidden">
+    <section className="py-12 md:py-16 lg:py-32 bg-gradient-to-b from-white to-slate-50/80 dark:from-gray-950 dark:to-gray-900 overflow-hidden">
       <div className="container px-4 md:px-6 relative">
         {/* Decorative elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -51,19 +51,19 @@ export function BenefitsSection() {
 
         <div className="relative">
           <motion.div
-            className="text-center max-w-3xl mx-auto mb-12 md:mb-20"
+            className="text-center max-w-3xl mx-auto mb-8 md:mb-12 lg:mb-20"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5 }}
           >
-            <Badge variant="outline" className="mb-4">
+            <Badge variant="outline" className="mb-3 md:mb-4">
               Fordelene
             </Badge>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3 md:mb-4">
               Transformer bedriften din med AI-automatisering
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-4 md:px-0">
               Bli med hundrevis av SMB-er som har revolusjonert driften sin med
               Norvalts AI-drevne automatiseringsløsninger.
             </p>
@@ -74,9 +74,9 @@ export function BenefitsSection() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="relative z-10 rounded-2xl overflow-hidden bg-background/50 backdrop-blur-sm border border-muted mb-16"
+            className="relative z-10 rounded-2xl overflow-hidden bg-background/50 backdrop-blur-sm border border-muted mb-8 md:mb-16"
           >
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 relative z-10">
               {benefits.map((benefit, index) => (
                 <FeatureItem key={benefit.title} {...benefit} index={index} />
               ))}
@@ -92,7 +92,7 @@ export function BenefitsSection() {
           >
             <Button
               size="lg"
-              className="gap-2 shadow-lg hover:shadow-xl transition-shadow"
+              className="gap-2 w-full sm:w-auto shadow-lg hover:shadow-xl transition-shadow"
             >
               Start automatisering i dag
               <ArrowRight className="h-4 w-4" />
@@ -122,7 +122,7 @@ const FeatureItem = ({
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       className={cn(
-        "flex flex-col py-10 relative group/feature border-slate-200 dark:border-slate-800",
+        "flex flex-col py-6 md:py-10 relative group/feature border-slate-200 dark:border-slate-800",
         "hover:bg-gradient-to-b hover:from-white/5 hover:to-white/0 dark:hover:from-white/5 dark:hover:to-transparent transition-colors duration-300",
         (index === 0 || index === 4) && "lg:border-l",
         index !== 3 && index !== 7 && "lg:border-r",
@@ -133,20 +133,20 @@ const FeatureItem = ({
         <div className="absolute inset-0 bg-gradient-to-t from-primary/5 to-transparent pointer-events-none" />
       </div>
 
-      <div className="mb-6 relative z-10 px-10">
-        <div className="bg-primary/10 p-3 rounded-xl inline-flex items-center justify-center dark:bg-primary/20 transition-transform duration-300 group-hover/feature:scale-110 group-hover/feature:bg-primary/20 dark:group-hover/feature:bg-primary/30">
+      <div className="mb-4 md:mb-6 relative z-10 px-6 md:px-10">
+        <div className="bg-primary/10 p-2 md:p-3 rounded-xl inline-flex items-center justify-center dark:bg-primary/20 transition-transform duration-300 group-hover/feature:scale-110 group-hover/feature:bg-primary/20 dark:group-hover/feature:bg-primary/30">
           {icon}
         </div>
       </div>
 
-      <div className="text-lg font-bold mb-2 relative z-10 px-10">
+      <div className="text-base md:text-lg font-bold mb-2 relative z-10 px-6 md:px-10">
         <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-primary/30 dark:bg-primary/40 group-hover/feature:bg-primary transition-all duration-300 origin-left" />
         <span className="group-hover/feature:translate-x-2 transition duration-300 inline-block text-gray-900 dark:text-white">
           {title}
         </span>
       </div>
 
-      <p className="text-muted-foreground relative z-10 px-10 transition-all duration-300 group-hover/feature:text-gray-700 dark:group-hover/feature:text-gray-300">
+      <p className="text-sm md:text-base text-muted-foreground relative z-10 px-6 md:px-10 transition-all duration-300 group-hover/feature:text-gray-700 dark:group-hover/feature:text-gray-300">
         {description}
       </p>
     </motion.div>

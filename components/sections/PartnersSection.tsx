@@ -1,5 +1,6 @@
 import { InfiniteSlider } from "@/components/ui/InfiniteSlider";
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
+import { cn } from "@/lib/utils";
 
 // Placeholder logo data - replace with actual partner logos if available
 const logos = [
@@ -56,45 +57,45 @@ const logos = [
 
 export function PartnersSection() {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-12 md:py-16 lg:py-24">
       <div className="container px-4 md:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-4">
+        <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12 lg:mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3 md:mb-4">
             Teknologi du kan stole på
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-4 md:px-0">
             Vi integrerer sømløst med ledende plattformer og verktøy, slik at du
             får en enklere arbeidshverdag fra dag én.
           </p>
         </div>
 
-        <div className="relative h-[100px] w-full overflow-hidden">
+        <div className="relative h-[80px] sm:h-[100px] w-full overflow-hidden">
           <InfiniteSlider
             className="flex h-full w-full items-center"
             duration={40}
-            gap={64}
+            gap={32}
           >
             {logos.map((logo) => (
               <div
                 key={logo.id}
-                className="flex w-32 items-center justify-center"
+                className="flex w-24 sm:w-32 items-center justify-center"
               >
                 <img
                   src={logo.image}
                   alt={logo.description}
-                  className={logo.className}
+                  className={cn(logo.className, "h-5 sm:h-7 w-auto")}
                   loading="lazy"
                 />
               </div>
             ))}
           </InfiniteSlider>
           <ProgressiveBlur
-            className="pointer-events-none absolute top-0 left-0 h-full w-[150px] bg-gradient-to-r from-background to-transparent"
+            className="pointer-events-none absolute top-0 left-0 h-full w-[100px] sm:w-[150px] bg-gradient-to-r from-background to-transparent"
             direction="left"
             blurIntensity={0.5}
           />
           <ProgressiveBlur
-            className="pointer-events-none absolute top-0 right-0 h-full w-[150px] bg-gradient-to-l from-background to-transparent"
+            className="pointer-events-none absolute top-0 right-0 h-full w-[100px] sm:w-[150px] bg-gradient-to-l from-background to-transparent"
             direction="right"
             blurIntensity={0.5}
           />
