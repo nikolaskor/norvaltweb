@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { PlaceholderImage } from "@/components/ui/placeholder-image";
+import { Button } from "@/components/ui/Button";
+import { PlaceholderImage } from "@/components/ui/PlaceholderImage";
 
 interface ServicePageLayoutProps {
   title: string;

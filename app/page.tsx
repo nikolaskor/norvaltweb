@@ -1,4 +1,4 @@
-import { Hero } from "@/components/ui/animated-hero";
+import { Hero } from "@/components/ui/AnimatedHero";
 import { PartnersSection } from "@/components/sections/PartnersSection";
 import { BenefitsSection } from "@/components/sections/BenefitsSection";
 import { FeatureSection } from "@/components/sections/FeatureSection";

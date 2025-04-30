@@ -4,7 +4,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@radix-ui/react-tabs";
 import { Layout, Pointer, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 
 interface TabContent {
   title: string;

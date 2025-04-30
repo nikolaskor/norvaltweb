@@ -1,5 +1,5 @@
 import { InfiniteSlider } from "@/components/ui/InfiniteSlider";
-import { ProgressiveBlur } from "@/components/ui/progressive-blur";
+import { ProgressiveBlur } from "@/components/ui/ProgressiveBlur";
 import { cn } from "@/lib/utils";
 
 // Placeholder logo data - replace with actual partner logos if available

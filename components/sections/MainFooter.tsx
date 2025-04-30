@@ -2,15 +2,15 @@
 
 import * as React from "react";
 import { Button } from "@/components/ui/Button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
+import { Input } from "@/components/ui/Input";
+import { Label } from "@/components/ui/Label";
+import { Switch } from "@/components/ui/Switch";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "@/components/ui/tooltip";
+} from "@/components/ui/Tooltip";
 import {
   Facebook,
   Instagram,
@@ -21,7 +21,7 @@ import {
   Twitter,
 } from "lucide-react";
 
-export default function FooterMain() {
+export default function MainFooter() {
   const [isDarkMode, setIsDarkMode] = React.useState(false);
 
   React.useEffect(() => {

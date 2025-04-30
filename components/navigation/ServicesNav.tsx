@@ -7,7 +7,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+} from "@/components/ui/NavigationMenu";
 import { MessageSquare, Mic, Workflow, BookOpen } from "lucide-react";
 
 const services = [

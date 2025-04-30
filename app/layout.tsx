@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import NavigationMain from "@/components/sections/NavigationMain";
-import FooterMain from "@/components/sections/FooterMain";
+import MainNavigation from "@/components/sections/MainNavigation";
+import MainFooter from "@/components/sections/MainFooter";
 import { CtaSection } from "@/components/sections/CtaSection";
 
-const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Norvalt Automation Agency",
-  description: "AI-driven automation solutions for SMBs",
+  title: "Norvalt",
+  description: "Norvalt - Digital Solutions",
 };
 
 export default function RootLayout({
@@ -19,11 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="bg-white">
-      <body className={`${manrope.variable} font-sans bg-white`}>
-        <NavigationMain />
+      <body className={`${inter.variable} font-sans bg-white`}>
+        <MainNavigation />
         <main className="min-h-screen">{children}</main>
         <CtaSection />
-        <FooterMain />
+        <MainFooter />
       </body>
     </html>
   );
