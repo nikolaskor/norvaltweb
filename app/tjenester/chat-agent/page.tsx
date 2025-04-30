@@ -23,6 +23,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/Accordion";
 import { ServiceHero } from "@/components/ui/ServiceHero";
+import { motion } from "framer-motion";
 
 export default function ChatAgentPage() {
   const features = [
@@ -268,63 +269,165 @@ export default function ChatAgentPage() {
       </Section>
 
       {/* How It Works */}
-      <Section className="bg-muted py-12 sm:py-16 md:py-24 lg:py-32">
+      <Section className="bg-muted py-16 sm:py-20 md:py-28 lg:py-36">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
-            <h2 className="text-center text-base/7 font-semibold text-primary">
+            <div className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
               How it works
-            </h2>
+            </div>
           </div>
 
-          <div className="mx-auto max-w-2xl text-center mt-4 sm:mt-6">
-            <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-secondary">
+          <div className="mx-auto max-w-3xl text-center mt-6 sm:mt-8 md:mt-10">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-secondary">
               Getting started is simple
-            </p>
-            <p className="mt-3 md:mt-4 text-base md:text-lg text-muted-foreground">
-              A simple, three step process to make your AI chat agent ready.
+            </h2>
+            <p className="mt-4 md:mt-6 text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
+              A straightforward three-step process to implement your AI chat
+              agent and transform your customer service experience.
             </p>
           </div>
 
-          <div className="mx-auto mt-10 md:mt-16 grid max-w-5xl grid-cols-1 gap-6 sm:gap-8 lg:gap-16 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="p-6 sm:p-8 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-3 sm:mb-4 drop-shadow-sm">
-                1
+          {/* Steps Container */}
+          <div className="relative mx-auto mt-16 md:mt-24 lg:mt-28 max-w-6xl">
+            {/* Connection Line - Only visible on lg screens */}
+            <div className="hidden lg:block absolute top-[4.5rem] left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-1 bg-gradient-to-r from-primary/10 via-primary/30 to-primary/10 rounded-full" />
+
+            {/* Steps */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-8 relative">
+              {/* Step 1 */}
+              <div className="group relative z-10">
+                <div className="absolute -inset-4 scale-95 bg-gradient-to-b from-primary/5 to-transparent opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 rounded-3xl" />
+                <div className="relative h-full p-8 sm:p-10 rounded-3xl bg-white shadow-lg border border-gray-100 overflow-hidden">
+                  {/* Number */}
+                  <div className="flex items-center mb-6 sm:mb-8">
+                    <div className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-primary/5 text-primary rounded-2xl">
+                      <span className="text-4xl sm:text-5xl font-bold">1</span>
+                    </div>
+                    <div className="w-full h-0.5 ml-4 bg-gradient-to-r from-primary/30 to-transparent rounded-full lg:hidden" />
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-xl sm:text-2xl font-semibold text-secondary mb-4">
+                    Discovery & Strategy
+                  </h3>
+                  <p className="text-base text-muted-foreground mb-6">
+                    We'll identify your business goals, analyze communication
+                    challenges, and find inefficiencies to wireframe a tailored
+                    solution for your needs.
+                  </p>
+
+                  {/* Icon */}
+                  <div className="absolute bottom-0 right-0 p-6 text-primary/10 transform translate-y-1/4 translate-x-1/4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="120"
+                      height="120"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <line x1="12" y1="8" x2="12" y2="12"></line>
+                      <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-secondary mb-2 sm:mb-3">
-                Discovery & Strategy
-              </h3>
-              <p className="text-sm sm:text-base text-muted-foreground">
-                We'll identify your business goals, analyze communication
-                challenges, and find inefficiencies to wireframe a tailored
-                solution for your needs.
-              </p>
+
+              {/* Step 2 */}
+              <div className="group relative z-10">
+                <div className="absolute -inset-4 scale-95 bg-gradient-to-b from-primary/5 to-transparent opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 rounded-3xl" />
+                <div className="relative h-full p-8 sm:p-10 rounded-3xl bg-white shadow-lg border border-gray-100 overflow-hidden">
+                  {/* Number */}
+                  <div className="flex items-center mb-6 sm:mb-8">
+                    <div className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-primary/5 text-primary rounded-2xl">
+                      <span className="text-4xl sm:text-5xl font-bold">2</span>
+                    </div>
+                    <div className="w-full h-0.5 ml-4 bg-gradient-to-r from-primary/30 to-transparent rounded-full lg:hidden" />
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-xl sm:text-2xl font-semibold text-secondary mb-4">
+                    Creation & Launch
+                  </h3>
+                  <p className="text-base text-muted-foreground mb-6">
+                    We'll develop, test and integrate a custom AI Chat Agent
+                    that seamlessly integrates with your existing systems and
+                    workflows.
+                  </p>
+
+                  {/* Icon */}
+                  <div className="absolute bottom-0 right-0 p-6 text-primary/10 transform translate-y-1/4 translate-x-1/4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="120"
+                      height="120"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              {/* Step 3 */}
+              <div className="group relative z-10">
+                <div className="absolute -inset-4 scale-95 bg-gradient-to-b from-primary/5 to-transparent opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 rounded-3xl" />
+                <div className="relative h-full p-8 sm:p-10 rounded-3xl bg-white shadow-lg border border-gray-100 overflow-hidden">
+                  {/* Number */}
+                  <div className="flex items-center mb-6 sm:mb-8">
+                    <div className="flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 bg-primary/5 text-primary rounded-2xl">
+                      <span className="text-4xl sm:text-5xl font-bold">3</span>
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-xl sm:text-2xl font-semibold text-secondary mb-4">
+                    Optimize & Improve
+                  </h3>
+                  <p className="text-base text-muted-foreground mb-6">
+                    We'll monitor, adjust and optimize your AI Chat Agent based
+                    on real-world data, ensuring consistent performance and
+                    outstanding results.
+                  </p>
+
+                  {/* Icon */}
+                  <div className="absolute bottom-0 right-0 p-6 text-primary/10 transform translate-y-1/4 translate-x-1/4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="120"
+                      height="120"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <line x1="12" y1="20" x2="12" y2="10"></line>
+                      <line x1="18" y1="20" x2="18" y2="4"></line>
+                      <line x1="6" y1="20" x2="6" y2="16"></line>
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="p-6 sm:p-8 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-3 sm:mb-4 drop-shadow-sm">
-                2
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-secondary mb-2 sm:mb-3">
-                Creation & Launch
-              </h3>
-              <p className="text-sm sm:text-base text-muted-foreground">
-                We'll develop, test and integrate a custom AI Chat Agent that
-                seamlessly integrates with your existing systems and workflows.
-              </p>
-            </div>
-
-            <div className="p-6 sm:p-8 rounded-2xl bg-white shadow-lg hover:shadow-xl transition-shadow duration-300 sm:col-span-2 lg:col-span-1 sm:max-w-md sm:mx-auto lg:max-w-none">
-              <div className="text-4xl sm:text-5xl md:text-6xl font-bold text-primary mb-3 sm:mb-4 drop-shadow-sm">
-                3
-              </div>
-              <h3 className="text-lg sm:text-xl font-semibold text-secondary mb-2 sm:mb-3">
-                Optimize
-              </h3>
-              <p className="text-sm sm:text-base text-muted-foreground">
-                We'll monitor, adjust and optimize your AI Chat Agent based on
-                real-world data, ensuring consistent performance and outstanding
-                results for your business.
-              </p>
+            {/* CTA Button */}
+            <div className="flex justify-center mt-12 md:mt-16">
+              <Button size="lg" className="px-8 gap-2">
+                Get Started
+                <ArrowUpCircle className="ml-2 h-5 w-5" />
+              </Button>
             </div>
           </div>
         </div>
@@ -332,65 +435,86 @@ export default function ChatAgentPage() {
 
       {/* Features in Detail */}
       <Section
-        className="bg-white py-12 sm:py-16 md:py-24 lg:py-32"
+        className="bg-white py-16 sm:py-20 md:py-28 lg:py-36 overflow-hidden"
         id="features"
       >
-        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-          <h2 className="text-center text-base/7 font-semibold text-primary">
-            Advanced capabilities
-          </h2>
-          <p className="mx-auto mt-2 max-w-lg text-center text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance text-secondary">
-            What makes our Chat Agent different
-          </p>
-          <div className="mt-8 sm:mt-10 md:mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2">
-            <div className="relative lg:row-span-2 sm:col-span-2 lg:col-span-1">
-              <div className="absolute inset-px rounded-lg bg-white lg:rounded-l-[2rem]"></div>
-              <div className="relative flex h-full flex-col overflow-hidden rounded-xl lg:rounded-l-[2rem]">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-16 md:mb-24">
+            <div className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-4">
+              Advanced capabilities
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-secondary mx-auto max-w-3xl">
+              What makes our Chat Agent different
+            </h2>
+          </div>
+
+          {/* Features Grid */}
+          <div className="mt-8 sm:mt-10 md:mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 relative">
+            {/* Decorative gradient blobs */}
+            <div className="absolute -top-10 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-50"></div>
+            <div className="absolute -bottom-20 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-50"></div>
+
+            {/* Feature 1 - Human-like Conversations */}
+            <div className="relative lg:row-span-2 sm:col-span-2 lg:col-span-1 group/chat">
+              <div className="absolute inset-px rounded-lg lg:rounded-l-[2rem] bg-white"></div>
+              <div className="relative flex h-full flex-col overflow-hidden rounded-xl lg:rounded-l-[2rem] border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="px-6 sm:px-8 pt-6 sm:pt-8 pb-3">
                   <div className="flex items-center justify-center max-lg:mb-3 lg:justify-start">
-                    <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                      <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6" />
+                    <div className="p-3 bg-primary/10 rounded-xl text-primary">
+                      <MessageSquare className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
                   </div>
-                  <p className="mt-2 text-base sm:text-lg font-medium tracking-tight text-secondary max-lg:text-center">
+                  <h3 className="mt-3 text-xl sm:text-2xl font-bold tracking-tight text-secondary max-lg:text-center">
                     Human-like Conversations
-                  </p>
-                  <p className="mt-2 max-w-lg text-xs sm:text-sm text-muted-foreground max-lg:text-center">
+                  </h3>
+                  <p className="mt-3 max-w-lg text-base text-muted-foreground max-lg:text-center">
                     Our AI chat agent engages in natural, context-aware
                     conversations that make your customers feel valued and
                     understood, no matter when they reach out.
                   </p>
                 </div>
+
+                {/* Chat Preview with Hover Animation */}
                 <div className="@container relative min-h-[18rem] sm:min-h-[24rem] w-full grow max-lg:mx-auto max-lg:max-w-sm">
-                  <div className="absolute inset-x-4 sm:inset-x-10 top-4 sm:top-10 bottom-0 overflow-hidden rounded-t-[12px] border-x-[3px] border-t-[3px] border-secondary bg-white shadow-2xl">
-                    <div className="flex items-start p-3 sm:p-4 bg-primary/5 border-b">
-                      <div className="w-6 h-6 sm:w-8 sm:h-8 mr-2 sm:mr-3 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
+                  <div className="absolute inset-x-4 sm:inset-x-10 top-4 sm:top-10 bottom-0 overflow-hidden rounded-xl bg-white shadow-lg">
+                    {/* Chat header */}
+                    <div className="flex items-start p-3 sm:p-4 bg-primary/5 border-b border-gray-100">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 mr-3 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold">
                         N
                       </div>
                       <div className="flex-1">
                         <div className="text-sm sm:text-base font-medium text-secondary">
                           Norvalt Chat Agent
                         </div>
-                        <div className="text-[10px] sm:text-xs text-muted-foreground">
+                        <div className="text-xs text-muted-foreground flex items-center">
+                          <span className="w-2 h-2 bg-green-500 rounded-full mr-1.5"></span>
                           Online now
                         </div>
                       </div>
                     </div>
-                    <div className="p-3 sm:p-4">
-                      <div className="mb-3 sm:mb-4 flex">
-                        <div className="max-w-[80%] rounded-lg bg-muted p-2 sm:p-3 text-xs sm:text-sm text-secondary">
+
+                    {/* Chat messages container */}
+                    <div className="p-3 sm:p-4 space-y-3 sm:space-y-4 overflow-hidden relative">
+                      {/* First message */}
+                      <div className="flex group-hover/chat:translate-y-[-30%] duration-300 transition-transform ease-in-out">
+                        <div className="max-w-[85%] rounded-lg bg-muted p-2 sm:p-3 text-xs sm:text-sm text-secondary">
                           Hi there! How can I help you with your AI automation
                           needs today?
                         </div>
                       </div>
-                      <div className="mb-3 sm:mb-4 flex justify-end">
-                        <div className="max-w-[80%] rounded-lg bg-primary p-2 sm:p-3 text-xs sm:text-sm text-white">
+
+                      {/* Second message */}
+                      <div className="flex justify-end group-hover/chat:translate-y-[-30%] duration-300 transition-transform ease-in-out">
+                        <div className="max-w-[85%] rounded-lg bg-primary p-2 sm:p-3 text-xs sm:text-sm text-white">
                           I'm looking for a chat solution for my website. Can
                           you help?
                         </div>
                       </div>
-                      <div className="flex">
-                        <div className="max-w-[80%] rounded-lg bg-muted p-2 sm:p-3 text-xs sm:text-sm text-secondary">
+
+                      {/* Third message - initially hidden, appears on hover */}
+                      <div className="flex opacity-0 translate-y-4 group-hover/chat:opacity-100 group-hover/chat:translate-y-0 duration-300 transition-all ease-in-out">
+                        <div className="max-w-[85%] rounded-lg bg-muted p-2 sm:p-3 text-xs sm:text-sm text-secondary">
                           Absolutely! Our AI Chat Agent is perfect for that. It
                           can handle customer inquiries 24/7, integrate with
                           your existing systems, and be fully customized to
@@ -403,29 +527,33 @@ export default function ChatAgentPage() {
               </div>
               <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 lg:rounded-l-[2rem]"></div>
             </div>
-            <div className="relative max-lg:row-start-1">
+
+            {/* Feature 2 - Multi-language Support */}
+            <div className="relative max-lg:row-start-1 group">
               <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"></div>
-              <div className="relative flex h-full flex-col overflow-hidden rounded-xl max-lg:rounded-t-[2rem]">
+              <div className="relative flex h-full flex-col overflow-hidden rounded-xl max-lg:rounded-t-[2rem] border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="px-6 sm:px-8 pt-6 sm:pt-8">
                   <div className="flex items-center justify-center mb-3 lg:justify-start">
-                    <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                      <Globe className="w-5 h-5 sm:w-6 sm:h-6" />
+                    <div className="p-3 bg-primary/10 rounded-xl text-primary">
+                      <Globe className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
                   </div>
-                  <p className="mt-2 text-base sm:text-lg font-medium tracking-tight text-secondary max-lg:text-center">
+                  <h3 className="mt-3 text-xl sm:text-2xl font-bold tracking-tight text-secondary max-lg:text-center">
                     Multi-language Support
-                  </p>
-                  <p className="mt-2 max-w-lg text-xs sm:text-sm text-muted-foreground max-lg:text-center">
+                  </h3>
+                  <p className="mt-3 max-w-lg text-base text-muted-foreground max-lg:text-center">
                     Connect with customers in Norwegian, English, and many other
                     languages to provide support to a global audience.
                   </p>
                 </div>
+
+                {/* Language Flags */}
                 <div className="flex flex-1 items-center justify-center px-4 sm:px-8 max-lg:pt-4 max-lg:pb-8 sm:px-10 lg:pb-2">
-                  <div className="grid grid-cols-3 gap-2 sm:gap-3 w-full max-w-xs">
+                  <div className="grid grid-cols-3 gap-3 sm:gap-4 w-full max-w-xs">
                     {["🇳🇴", "🇬🇧", "🇸🇪", "🇩🇰", "🇫🇮", "🇩🇪"].map((flag, i) => (
                       <div
                         key={i}
-                        className="aspect-video flex items-center justify-center bg-muted rounded-lg text-xl sm:text-2xl"
+                        className="aspect-video flex items-center justify-center bg-muted/50 rounded-lg text-2xl sm:text-3xl shadow-sm transform transition-transform duration-300 hover:scale-105 hover:bg-muted"
                       >
                         {flag}
                       </div>
@@ -435,32 +563,38 @@ export default function ChatAgentPage() {
               </div>
               <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 max-lg:rounded-t-[2rem]"></div>
             </div>
-            <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
+
+            {/* Feature 3 - Custom Knowledge Base */}
+            <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2 group">
               <div className="absolute inset-px rounded-lg bg-white"></div>
-              <div className="relative flex h-full flex-col overflow-hidden rounded-xl">
+              <div className="relative flex h-full flex-col overflow-hidden rounded-xl border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="px-6 sm:px-8 pt-6 sm:pt-8">
                   <div className="flex items-center justify-center mb-3 lg:justify-start">
-                    <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                      <BookOpen className="w-5 h-5 sm:w-6 sm:h-6" />
+                    <div className="p-3 bg-primary/10 rounded-xl text-primary">
+                      <BookOpen className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
                   </div>
-                  <p className="mt-2 text-base sm:text-lg font-medium tracking-tight text-secondary max-lg:text-center">
+                  <h3 className="mt-3 text-xl sm:text-2xl font-bold tracking-tight text-secondary max-lg:text-center">
                     Custom Knowledge Base
-                  </p>
-                  <p className="mt-2 max-w-lg text-xs sm:text-sm text-muted-foreground max-lg:text-center">
+                  </h3>
+                  <p className="mt-3 max-w-lg text-base text-muted-foreground max-lg:text-center">
                     Trained specifically on your website, documentation, and
                     FAQs to provide accurate, company-specific answers.
                   </p>
                 </div>
+
+                {/* Knowledge Base Visualization */}
                 <div className="@container flex flex-1 items-center justify-center max-lg:py-4 lg:pb-2">
-                  <div className="w-full max-w-[160px] sm:max-w-[200px] aspect-square rounded-lg bg-muted flex items-center justify-center p-4">
-                    <div className="w-full h-full border-2 border-dashed border-primary/40 rounded-md flex items-center justify-center">
-                      <div className="text-center">
-                        <div className="text-xl sm:text-2xl text-primary mb-1">
+                  <div className="w-full max-w-[160px] sm:max-w-[200px] aspect-square rounded-xl bg-muted/50 p-5 sm:p-6 transform transition-transform duration-300 hover:scale-105">
+                    <div className="w-full h-full border-2 border-dashed border-primary/40 rounded-lg flex items-center justify-center">
+                      <div className="text-center p-3">
+                        <div className="text-2xl sm:text-3xl text-primary mb-2">
                           📚
                         </div>
-                        <div className="text-[10px] sm:text-xs text-secondary font-medium">
-                          Your custom knowledge
+                        <div className="text-xs sm:text-sm text-secondary font-medium">
+                          Your custom
+                          <br />
+                          knowledge base
                         </div>
                       </div>
                     </div>
@@ -469,27 +603,31 @@ export default function ChatAgentPage() {
               </div>
               <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5"></div>
             </div>
-            <div className="relative lg:row-span-2 sm:col-span-2 lg:col-span-1">
+
+            {/* Feature 4 - 24/7 Availability */}
+            <div className="relative lg:row-span-2 sm:col-span-2 lg:col-span-1 group">
               <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
-              <div className="relative flex h-full flex-col overflow-hidden rounded-xl max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]">
+              <div className="relative flex h-full flex-col overflow-hidden rounded-xl max-lg:rounded-b-[2rem] lg:rounded-r-[2rem] border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="px-6 sm:px-8 pt-6 sm:pt-8 pb-3">
                   <div className="flex items-center justify-center max-lg:mb-3 lg:justify-start">
-                    <div className="p-2 bg-primary/10 rounded-lg text-primary">
-                      <Clock className="w-5 h-5 sm:w-6 sm:h-6" />
+                    <div className="p-3 bg-primary/10 rounded-xl text-primary">
+                      <Clock className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
                   </div>
-                  <p className="mt-2 text-base sm:text-lg font-medium tracking-tight text-secondary max-lg:text-center">
+                  <h3 className="mt-3 text-xl sm:text-2xl font-bold tracking-tight text-secondary max-lg:text-center">
                     24/7 Availability
-                  </p>
-                  <p className="mt-2 max-w-lg text-xs sm:text-sm text-muted-foreground max-lg:text-center">
+                  </h3>
+                  <p className="mt-3 max-w-lg text-base text-muted-foreground max-lg:text-center">
                     Never miss a lead again with round-the-clock automated
                     responses that convert even when your team is offline.
                   </p>
                 </div>
+
+                {/* Clock Visualization */}
                 <div className="relative min-h-[16rem] sm:min-h-[24rem] w-full grow flex items-center justify-center">
-                  <div className="w-48 h-48 sm:w-64 sm:h-64 rounded-full bg-muted flex items-center justify-center relative">
-                    <div className="w-40 h-40 sm:w-56 sm:h-56 rounded-full border-6 sm:border-8 border-primary/20 flex items-center justify-center relative">
-                      <div className="w-32 h-32 sm:w-44 sm:h-44 rounded-full bg-white shadow-md flex flex-col items-center justify-center">
+                  <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full bg-white shadow-lg flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
+                    <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full border-6 md:border-8 border-primary/20 flex items-center justify-center relative">
+                      <div className="w-32 h-32 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-full bg-white shadow-md flex flex-col items-center justify-center transform group-hover:rotate-12 transition-transform duration-1000">
                         <div className="text-3xl sm:text-4xl font-bold text-primary mb-1">
                           24/7
                         </div>
@@ -499,15 +637,25 @@ export default function ChatAgentPage() {
                           for your customers
                         </div>
                       </div>
-                      <div className="absolute top-0 right-0 w-4 sm:w-5 h-4 sm:h-5 rounded-full bg-primary"></div>
-                      <div className="absolute bottom-1/4 left-0 w-3 sm:w-4 h-3 sm:h-4 rounded-full bg-primary/60"></div>
-                      <div className="absolute top-1/3 left-0 w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-primary/40"></div>
+
+                      {/* Decorative dots */}
+                      <div className="absolute animate-pulse top-0 right-0 w-4 sm:w-5 h-4 sm:h-5 rounded-full bg-primary"></div>
+                      <div className="absolute animate-pulse delay-300 bottom-1/4 left-0 w-3 sm:w-4 h-3 sm:h-4 rounded-full bg-primary/60"></div>
+                      <div className="absolute animate-pulse delay-700 top-1/3 left-0 w-2 sm:w-3 h-2 sm:h-3 rounded-full bg-primary/40"></div>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="pointer-events-none absolute inset-px rounded-lg shadow-sm ring-1 ring-black/5 max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
             </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="flex justify-center mt-12 md:mt-16 lg:mt-20">
+            <Button size="lg" className="px-8 gap-2">
+              Explore All Features
+              <ArrowUpCircle className="ml-2 h-5 w-5" />
+            </Button>
           </div>
         </div>
       </Section>
