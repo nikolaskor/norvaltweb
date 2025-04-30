@@ -16,26 +16,26 @@ const services = [
     href: "/tjenester/chat-agent",
     description:
       "Intelligent kundeservice som svarer på spørsmål døgnet rundt.",
-    icon: <MessageSquare className="h-4 w-4" />,
+    icon: <MessageSquare className="h-5 w-5 text-primary" />,
   },
   {
     title: "Voice Agent",
     href: "/tjenester/voice-agent",
     description:
       "Talebasert kundeservice som håndterer telefonsamtaler effektivt.",
-    icon: <Mic className="h-4 w-4" />,
+    icon: <Mic className="h-5 w-5 text-primary" />,
   },
   {
     title: "Workflow Automatisering",
     href: "/tjenester/workflow",
     description: "Automatiser rutineoppgaver og effektiviser arbeidsprosesser.",
-    icon: <Workflow className="h-4 w-4" />,
+    icon: <Workflow className="h-5 w-5 text-primary" />,
   },
   {
     title: "Kurs & Rådgivning",
     href: "/tjenester/kurs-og-radgivning",
     description: "Skreddersydde AI-kurs og strategisk rådgivning.",
-    icon: <BookOpen className="h-4 w-4" />,
+    icon: <BookOpen className="h-5 w-5 text-primary" />,
   },
 ];
 
@@ -59,14 +59,16 @@ const ListItem = ({
         <Link
           href={href}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            "block select-none space-y-2 rounded-md p-4 leading-none no-underline outline-none transition-colors hover:bg-primary/5 focus:bg-primary/5",
             className
           )}
           {...props}
         >
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             {icon}
-            <div className="text-sm font-medium leading-none">{title}</div>
+            <div className="text-base font-semibold leading-none text-secondary">
+              {title}
+            </div>
           </div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {description}
@@ -82,7 +84,9 @@ export function ServicesNav() {
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Tjenester</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="text-base font-semibold text-secondary hover:text-primary">
+            Tjenester
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {services.map((service) => (

@@ -57,8 +57,21 @@ const logos = [
 
 export function PartnersSection() {
   return (
-    <section className="py-12 md:py-16 lg:py-24">
-      <div className="container px-4 md:px-6">
+    <section className="py-12 md:py-16 lg:py-24 relative isolate bg-background">
+      {/* Gradient decoration */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 transform-gpu overflow-hidden blur-3xl opacity-30"
+      >
+        <div
+          style={{
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 75%, 75% 100%, 0% 100%)",
+          }}
+          className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-br from-primary/20 via-background to-secondary/20"
+        />
+      </div>
+
+      <div className="container px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12 lg:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3 md:mb-4">
             Teknologi du kan stole på

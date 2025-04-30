@@ -63,13 +63,40 @@ export function FeatureSection() {
   ];
 
   return (
-    <section className="py-12 md:py-16 lg:py-24 bg-background">
-      <div className="container px-4 md:px-6">
+    <section className="py-12 md:py-16 lg:py-24 bg-background relative isolate">
+      {/* Right-side gradient decoration */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-y-0 right-0 -z-10 transform-gpu overflow-hidden w-[40%] blur-3xl"
+      >
+        <div
+          style={{
+            clipPath:
+              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+          }}
+          className="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-primary/40 to-secondary/40 opacity-20 sm:w-[72.1875rem]"
+        />
+      </div>
+
+      <div className="container px-4 md:px-6 relative z-10">
         <Feature108
-          badge="Norvalt tjenester"
           heading="Utforsk våre tjenester"
           description="Oppdag hvordan Norvalt kan hjelpe din bedrift med å spare tid, redusere kostnader og forbedre kundeopplevelsen med våre AI-drevne løsninger."
           tabs={featureTabs}
+        />
+      </div>
+
+      {/* Left-side gradient decoration */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-y-0 left-0 -z-10 transform-gpu overflow-hidden w-[40%] blur-3xl"
+      >
+        <div
+          style={{
+            clipPath:
+              "polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)",
+          }}
+          className="relative right-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] translate-x-1/2 rotate-180 bg-gradient-to-tr from-secondary/40 to-primary/40 opacity-20 sm:w-[72.1875rem]"
         />
       </div>
     </section>

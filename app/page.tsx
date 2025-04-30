@@ -18,9 +18,6 @@ export default function Home() {
 
       {/* Features Preview */}
       <FeatureSection />
-
-      {/* Benefits Section */}
-      <BenefitsSection />
     </>
   );
 }

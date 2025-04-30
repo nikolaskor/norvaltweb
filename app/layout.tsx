@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
-import MainNavigation from "@/components/sections/MainNavigation";
+import { Header } from "@/components/ui/Header";
 import MainFooter from "@/components/sections/MainFooter";
 import { CtaSection } from "@/components/sections/CtaSection";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Norvalt",
@@ -19,8 +23,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="bg-white">
-      <body className={`${inter.variable} font-sans bg-white`}>
-        <MainNavigation />
+      <body className={`${manrope.variable} font-sans bg-white`}>
+        <Header />
         <main className="min-h-screen">{children}</main>
         <CtaSection />
         <MainFooter />
