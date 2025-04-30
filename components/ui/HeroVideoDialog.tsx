@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Play, XIcon } from "lucide-react";
+import { createPortal } from "react-dom";
 
 import { cn } from "@/lib/utils";
 
@@ -27,7 +28,7 @@ interface HeroVideoProps {
 const animationVariants = {
   "from-bottom": {
     initial: { y: "100%", opacity: 0 },
-    animate: { y: 0, opacity: 1 },
+    animate: { y: "0%", opacity: 1 },
     exit: { y: "100%", opacity: 0 },
   },
   "from-center": {
@@ -37,17 +38,17 @@ const animationVariants = {
   },
   "from-top": {
     initial: { y: "-100%", opacity: 0 },
-    animate: { y: 0, opacity: 1 },
+    animate: { y: "0%", opacity: 1 },
     exit: { y: "-100%", opacity: 0 },
   },
   "from-left": {
     initial: { x: "-100%", opacity: 0 },
-    animate: { x: 0, opacity: 1 },
+    animate: { x: "0%", opacity: 1 },
     exit: { x: "-100%", opacity: 0 },
   },
   "from-right": {
     initial: { x: "100%", opacity: 0 },
-    animate: { x: 0, opacity: 1 },
+    animate: { x: "0%", opacity: 1 },
     exit: { x: "100%", opacity: 0 },
   },
   fade: {
@@ -57,15 +58,88 @@ const animationVariants = {
   },
   "top-in-bottom-out": {
     initial: { y: "-100%", opacity: 0 },
-    animate: { y: 0, opacity: 1 },
+    animate: { y: "0%", opacity: 1 },
     exit: { y: "100%", opacity: 0 },
   },
   "left-in-right-out": {
     initial: { x: "-100%", opacity: 0 },
-    animate: { x: 0, opacity: 1 },
+    animate: { x: "0%", opacity: 1 },
     exit: { x: "100%", opacity: 0 },
   },
 };
+
+function VideoModal({
+  isOpen,
+  onClose,
+  videoSrc,
+  animationStyle = "from-center",
+}: {
+  isOpen: boolean;
+  onClose: () => void;
+  videoSrc: string;
+  animationStyle: AnimationStyle;
+}) {
+  const selectedAnimation = animationVariants[animationStyle];
+
+  // Disable scroll when video is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  if (!isOpen) return null;
+
+  return createPortal(
+    <AnimatePresence>
+      <div
+        className="fixed inset-0 bg-black/70 backdrop-blur-sm"
+        style={{
+          zIndex: 99999,
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+        }}
+      >
+        <div
+          className="fixed inset-0 flex items-center justify-center"
+          onClick={onClose}
+        >
+          <motion.div
+            {...selectedAnimation}
+            transition={{ type: "spring", damping: 30, stiffness: 300 }}
+            className="relative w-full max-w-4xl aspect-video mx-4 md:mx-0"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <motion.button
+              className="absolute -top-16 right-0 text-white text-xl bg-neutral-900/50 ring-1 backdrop-blur-md rounded-full p-2 dark:bg-neutral-100/50 dark:text-black"
+              onClick={onClose}
+            >
+              <XIcon className="size-5" />
+            </motion.button>
+            <div className="size-full border-2 border-white rounded-2xl overflow-hidden relative">
+              <iframe
+                src={videoSrc}
+                className="size-full rounded-2xl"
+                allowFullScreen
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              ></iframe>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </AnimatePresence>,
+    document.body
+  );
+}
 
 export function HeroVideoDialog({
   animationStyle = "from-center",
@@ -75,7 +149,6 @@ export function HeroVideoDialog({
   className,
 }: HeroVideoProps) {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
-  const selectedAnimation = animationVariants[animationStyle];
 
   return (
     <div className={cn("relative", className)}>
@@ -106,35 +179,14 @@ export function HeroVideoDialog({
           </div>
         </div>
       </div>
-      <AnimatePresence>
-        {isVideoOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            onClick={() => setIsVideoOpen(false)}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-md"
-          >
-            <motion.div
-              {...selectedAnimation}
-              transition={{ type: "spring", damping: 30, stiffness: 300 }}
-              className="relative w-full max-w-4xl aspect-video mx-4 md:mx-0"
-            >
-              <motion.button className="absolute -top-16 right-0 text-white text-xl bg-neutral-900/50 ring-1 backdrop-blur-md rounded-full p-2 dark:bg-neutral-100/50 dark:text-black">
-                <XIcon className="size-5" />
-              </motion.button>
-              <div className="size-full border-2 border-white rounded-2xl overflow-hidden isolate z-[1] relative">
-                <iframe
-                  src={videoSrc}
-                  className="size-full rounded-2xl"
-                  allowFullScreen
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                ></iframe>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+
+      {/* Video modal with portal */}
+      <VideoModal
+        isOpen={isVideoOpen}
+        onClose={() => setIsVideoOpen(false)}
+        videoSrc={videoSrc}
+        animationStyle={animationStyle}
+      />
     </div>
   );
 }

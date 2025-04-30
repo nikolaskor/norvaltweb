@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Section, SectionHeading, Grid, FadeIn } from "@/components/ui/Section";
 import { Card, CardHeader } from "@/components/ui/Card";
 import { Button } from "@/components/ui/Button";
@@ -14,6 +14,7 @@ import {
   ArrowUpCircle,
   LineChart,
   BookOpen,
+  Send,
 } from "lucide-react";
 import {
   Accordion,
@@ -45,6 +46,79 @@ export default function ChatAgentPage() {
     },
   ];
 
+  // Chat mockup state
+  const [messages, setMessages] = useState([
+    {
+      sender: "bot",
+      text: "Hei! 👋 Jeg er Norvalt AI-assistenten. Hvordan kan jeg hjelpe deg i dag?",
+      time: "09:30",
+    },
+  ]);
+  const [currentMessage, setCurrentMessage] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+
+  // Demo chat flow
+  const handleSendMessage = () => {
+    if (!currentMessage.trim()) return;
+
+    // Add user message
+    const userMessage = {
+      sender: "user",
+      text: currentMessage,
+      time: new Date().toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+      }),
+    };
+
+    setMessages((prev) => [...prev, userMessage]);
+    setCurrentMessage("");
+    setIsTyping(true);
+
+    // Simulate bot response
+    setTimeout(() => {
+      let botResponse;
+
+      if (
+        currentMessage.toLowerCase().includes("pris") ||
+        currentMessage.toLowerCase().includes("kost")
+      ) {
+        botResponse = {
+          sender: "bot",
+          text: "Vi tilbyr fleksible prisplaner basert på størrelsen og behovene til din bedrift. Ønsker du at jeg skal sette deg i kontakt med en av våre konsulenter som kan gi deg et tilpasset tilbud?",
+          time: new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
+        };
+      } else if (
+        currentMessage.toLowerCase().includes("demo") ||
+        currentMessage.toLowerCase().includes("prøve")
+      ) {
+        botResponse = {
+          sender: "bot",
+          text: "Vi tilbyr en gratis demo av vår AI Chat Agent. Jeg kan hjelpe deg med å planlegge en demonstrasjon med en av våre produktspesialister. Når passer det best for deg?",
+          time: new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
+        };
+      } else {
+        botResponse = {
+          sender: "bot",
+          text: "Takk for spørsmålet! Vår AI Chat Agent kan skreddersys for din bedrift. Den kan håndtere alt fra vanlige kundehenvendelser til å booke møter og gi produktanbefalinger. Er det noen spesifikke funksjoner du er interessert i?",
+          time: new Date().toLocaleTimeString([], {
+            hour: "2-digit",
+            minute: "2-digit",
+          }),
+        };
+      }
+
+      setMessages((prev) => [...prev, botResponse]);
+      setIsTyping(false);
+    }, 1500);
+  };
+
   return (
     <>
       {/* Hero Section */}
@@ -62,7 +136,7 @@ export default function ChatAgentPage() {
 
       {/* Feature Overview */}
       <Section className="overflow-hidden bg-white py-12 md:py-16 lg:py-24">
-        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-12 px-4 sm:px-6 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:gap-x-8 lg:px-8">
+        <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 px-4 sm:px-6 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:px-8">
           <div className="lg:pt-4">
             <div className="lg:max-w-lg">
               <h2 className="text-base/7 font-semibold text-primary">
@@ -97,14 +171,98 @@ export default function ChatAgentPage() {
               </div>
             </div>
           </div>
-          <div className="relative flex items-center justify-center">
-            <img
-              alt="Chat agent in action"
-              src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png"
-              width={2432}
-              height={1442}
-              className="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[40rem] md:-ml-4 lg:-ml-0"
-            />
+          <div className="flex items-center justify-center h-full">
+            <div className="w-full max-w-md rounded-2xl shadow-2xl overflow-hidden border border-gray-200">
+              {/* Chat header */}
+              <div className="bg-primary/10 p-4 flex items-center border-b border-gray-200">
+                <div className="h-10 w-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-semibold mr-3">
+                  N
+                </div>
+                <div>
+                  <div className="font-medium text-secondary">Norvalt AI</div>
+                  <div className="text-xs text-muted-foreground flex items-center">
+                    <span className="w-2 h-2 bg-green-500 rounded-full mr-1.5"></span>
+                    Online nå
+                  </div>
+                </div>
+              </div>
+
+              {/* Chat messages */}
+              <div className="bg-white h-[400px] overflow-y-auto p-4 flex flex-col gap-4">
+                {messages.map((message, index) => (
+                  <div
+                    key={index}
+                    className={`flex ${
+                      message.sender === "user"
+                        ? "justify-end"
+                        : "justify-start"
+                    }`}
+                  >
+                    <div
+                      className={`max-w-[80%] rounded-xl p-3 ${
+                        message.sender === "user"
+                          ? "bg-primary text-white"
+                          : "bg-muted text-secondary"
+                      }`}
+                    >
+                      <div className="text-sm">{message.text}</div>
+                      <div
+                        className={`text-xs mt-1 ${
+                          message.sender === "user"
+                            ? "text-white/70"
+                            : "text-muted-foreground"
+                        }`}
+                      >
+                        {message.time}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+                {isTyping && (
+                  <div className="flex justify-start">
+                    <div className="max-w-[80%] rounded-xl p-3 bg-muted text-secondary">
+                      <div className="flex gap-1">
+                        <div
+                          className="w-2 h-2 rounded-full bg-secondary/40 animate-bounce"
+                          style={{ animationDelay: "0ms" }}
+                        ></div>
+                        <div
+                          className="w-2 h-2 rounded-full bg-secondary/40 animate-bounce"
+                          style={{ animationDelay: "200ms" }}
+                        ></div>
+                        <div
+                          className="w-2 h-2 rounded-full bg-secondary/40 animate-bounce"
+                          style={{ animationDelay: "400ms" }}
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+
+              {/* Chat input */}
+              <div className="p-4 border-t border-gray-200 bg-white">
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    value={currentMessage}
+                    onChange={(e) => setCurrentMessage(e.target.value)}
+                    onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
+                    placeholder="Skriv din melding her..."
+                    className="flex-1 px-4 py-2 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                  />
+                  <button
+                    onClick={handleSendMessage}
+                    className="bg-primary text-white p-2 rounded-full hover:bg-primary/90 transition-colors"
+                  >
+                    <Send className="h-5 w-5" />
+                  </button>
+                </div>
+                <div className="text-xs text-center mt-2 text-muted-foreground">
+                  Prøv å spørre om pris, demo eller funksjoner
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </Section>

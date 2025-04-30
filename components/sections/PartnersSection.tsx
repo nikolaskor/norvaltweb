@@ -57,7 +57,7 @@ const logos = [
 
 export function PartnersSection() {
   return (
-    <section className="py-12 md:py-16 lg:py-24 relative isolate bg-background">
+    <section className="py-12 md:py-16 lg:py-24 relative isolate bg-white">
       {/* Gradient decoration */}
       <div
         aria-hidden="true"
@@ -73,16 +73,19 @@ export function PartnersSection() {
 
       <div className="container px-4 md:px-6 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3 md:mb-4">
+          <div className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-4">
+            Integrasjoner
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3 md:mb-4 text-secondary">
             Teknologi du kan stole på
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-4 md:px-0">
+          <p className="text-base/7 sm:text-lg/8 md:text-xl/8 text-muted-foreground px-4 md:px-0 max-w-2xl mx-auto">
             Vi integrerer sømløst med ledende plattformer og verktøy, slik at du
             får en enklere arbeidshverdag fra dag én.
           </p>
         </div>
 
-        <div className="relative h-[80px] sm:h-[100px] w-full overflow-hidden">
+        <div className="relative h-[80px] sm:h-[100px] w-full overflow-hidden rounded-xl shadow-md bg-white/50 backdrop-blur-sm p-2">
           <InfiniteSlider
             className="flex h-full w-full items-center"
             duration={40}
@@ -96,19 +99,22 @@ export function PartnersSection() {
                 <img
                   src={logo.image}
                   alt={logo.description}
-                  className={cn(logo.className, "h-5 sm:h-7 w-auto")}
+                  className={cn(
+                    logo.className,
+                    "h-5 sm:h-7 w-auto opacity-80 hover:opacity-100 transition-opacity"
+                  )}
                   loading="lazy"
                 />
               </div>
             ))}
           </InfiniteSlider>
           <ProgressiveBlur
-            className="pointer-events-none absolute top-0 left-0 h-full w-[100px] sm:w-[150px] bg-gradient-to-r from-background to-transparent"
+            className="pointer-events-none absolute top-0 left-0 h-full w-[100px] sm:w-[150px] bg-gradient-to-r from-white to-transparent"
             direction="left"
             blurIntensity={0.5}
           />
           <ProgressiveBlur
-            className="pointer-events-none absolute top-0 right-0 h-full w-[100px] sm:w-[150px] bg-gradient-to-l from-background to-transparent"
+            className="pointer-events-none absolute top-0 right-0 h-full w-[100px] sm:w-[150px] bg-gradient-to-l from-white to-transparent"
             direction="right"
             blurIntensity={0.5}
           />

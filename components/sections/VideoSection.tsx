@@ -19,30 +19,37 @@ export function VideoSection() {
         />
       </div>
 
-      <div className="container px-4 md:px-6 relative z-10">
+      <div className="container px-4 md:px-6 relative z-[1]">
         <div className="text-center max-w-3xl mx-auto mb-8 md:mb-12 lg:mb-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3 md:mb-4">
+          <div className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-4">
+            Se hvordan det fungerer
+          </div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-3 md:mb-4 text-secondary">
             Hvorfor velge AI?
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground px-4 md:px-0">
+          <p className="text-base/7 sm:text-lg/8 md:text-xl/8 text-muted-foreground px-4 md:px-0 max-w-2xl mx-auto">
             Se hvordan Norvalt hjelper norske bedrifter med å spare tid, kutte
             kostnader og bli mer konkurransedyktige gjennom skreddersydde
             AI-løsninger.
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto mb-8 md:mb-12">
+        <div className="max-w-4xl mx-auto mb-8 md:mb-12 relative">
+          <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-transparent to-secondary/20 rounded-xl blur-lg opacity-50"></div>
           <HeroVideoDialog
             videoSrc="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
             thumbnailSrc="/images/automation-demo-thumbnail.jpg"
             thumbnailAlt="Norvalt Automation Demo"
             animationStyle="from-bottom"
-            className="rounded-lg overflow-hidden shadow-xl"
+            className="rounded-xl overflow-hidden shadow-xl relative z-[2]"
           />
         </div>
 
-        <div className="text-center">
-          <Button size="lg" className="gap-2 w-full sm:w-auto">
+        <div className="text-center relative z-[1]">
+          <Button
+            size="lg"
+            className="gap-2 w-full sm:w-auto shadow-sm hover:shadow-md"
+          >
             Book en demo
             <ArrowRight className="h-4 w-4" />
           </Button>

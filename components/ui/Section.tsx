@@ -57,10 +57,10 @@ export function Section({
 }
 
 const fadeIn = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: "20px" },
   visible: {
     opacity: 1,
-    y: 0,
+    y: "0px",
     transition: { duration: 0.5 },
   },
 };

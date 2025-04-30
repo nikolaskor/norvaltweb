@@ -85,7 +85,7 @@ export default function NavigationMain() {
             alt="Norvalt Logo"
             width={160}
             height={32}
-            className="h-8 w-auto"
+            className="h-8 w-auto object-contain"
             priority
           />
         </Link>
