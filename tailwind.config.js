@@ -20,7 +20,7 @@ module.exports = {
         "2xl": "5rem",
       },
       screens: {
-        "2xl": "1200px",
+        "2xl": "1400px",
       },
     },
     extend: {
