@@ -36,7 +36,12 @@ export function ServiceHero({
   className,
 }: ServiceHeroProps) {
   return (
-    <div className={cn("bg-white relative isolate", className)}>
+    <div
+      className={cn(
+        "bg-white relative isolate min-h-[80vh] flex items-center",
+        className
+      )}
+    >
       {/* Top gradient decoration */}
       <div
         aria-hidden="true"
@@ -51,7 +56,7 @@ export function ServiceHero({
         />
       </div>
 
-      <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
+      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-20 lg:px-8 w-full">
         <div className="mx-auto max-w-2xl text-center">
           {/* Optional badge/announcement */}
           {badge && (

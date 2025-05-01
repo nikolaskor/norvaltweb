@@ -24,7 +24,7 @@ function Hero() {
   }, [titleNumber, titles]);
 
   return (
-    <div className="w-full relative isolate bg-white">
+    <div className="w-full relative isolate bg-white min-h-[80vh] flex items-center">
       {/* Top gradient decoration */}
       <div
         aria-hidden="true"
@@ -39,8 +39,8 @@ function Hero() {
         />
       </div>
 
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex gap-4 md:gap-8 py-12 md:py-20 lg:py-40 items-center justify-center flex-col">
+      <div className="container mx-auto px-4 md:px-6 w-full">
+        <div className="flex gap-4 md:gap-8 py-8 md:py-12 items-center justify-center flex-col">
           <div>
             <div className="relative rounded-full px-3 py-1 text-sm/6 text-secondary ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               <span>New feature</span>{" "}
@@ -52,7 +52,9 @@ function Hero() {
           </div>
           <div className="flex gap-3 md:gap-4 flex-col max-w-3xl">
             <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl tracking-tight text-center font-bold">
-              <span className="text-primary">Vi hjelper deg å utforske</span>
+              <span className="text-primary whitespace-nowrap">
+                Vi hjelper deg å utforske
+              </span>
               {/* Animated text span */}
               <span className="relative flex w-full justify-center overflow-hidden text-center pb-2 md:pb-4 pt-1">
                 &nbsp;
