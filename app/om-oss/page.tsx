@@ -43,10 +43,12 @@ const teamMembers = [
   {
     name: "Nikolai Skor",
     role: "CEO and Founder",
+    email: "nikolai@norvalt.no",
     imageUrl: "/images/team/placeholder-1.jpg",
   },
   {
     name: "Sebastian Bay",
+    email: "sebastian@norvalt.no",
     role: "Head of Sales",
     imageUrl: "/images/team/placeholder-2.jpg",
   },
@@ -73,18 +75,36 @@ export default function AboutUs() {
             </div>
 
             {/* Image Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 gap-6">
               <div className="grid grid-cols-2 gap-6 h-full">
                 <div className="grid grid-rows-2 gap-6">
-                  <div className="aspect-[4/3] rounded-lg overflow-hidden bg-gray-100">
-                    <div className="w-full h-full bg-gray-200"></div>
+                  <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-md">
+                    <Image
+                      src="/images/hands-unrecognizable-female-doctor-writing-form-typing-laptop-keyboard.jpg"
+                      alt="Doctor working on laptop"
+                      width={500}
+                      height={375}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <div className="aspect-[4/3] rounded-lg overflow-hidden bg-gray-100">
-                    <div className="w-full h-full bg-gray-200"></div>
+                  <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-md">
+                    <Image
+                      src="/images/top-view-young-man-holding-laptop.jpg"
+                      alt="Man working with laptop"
+                      width={500}
+                      height={375}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
-                <div className="aspect-[3/4] rounded-lg overflow-hidden bg-gray-100 h-full">
-                  <div className="w-full h-full bg-gray-200"></div>
+                <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-md h-full">
+                  <Image
+                    src="/images/young-family-choosing-car-car-showroom.jpg"
+                    alt="Family in business discussion"
+                    width={500}
+                    height={667}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -93,7 +113,7 @@ export default function AboutUs() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-24 lg:py-32 bg-white border-t border-gray-100">
+      <section className="py-24 lg:py-32 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Text Content */}
@@ -159,7 +179,7 @@ export default function AboutUs() {
       </section>
 
       {/* Image Section beneath Mission */}
-      <section className="py-16 lg:py-24 bg-gray-50">
+      <section className="py-16 lg:py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-6xl mx-auto">
             <div className="rounded-2xl overflow-hidden shadow-xl">
@@ -243,7 +263,7 @@ export default function AboutUs() {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 lg:py-32 bg-gray-50">
+      <section className="py-24 lg:py-32 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="mx-auto max-w-3xl lg:text-center mb-16">
             <p className="text-primary font-medium mb-4">Vårt team</p>
@@ -286,6 +306,26 @@ export default function AboutUs() {
                   {person.role}
                 </p>
                 <div className="flex space-x-4">
+                  <a
+                    href={`mailto:${person.email}`}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                    aria-label={`Email ${person.name}`}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="w-5 h-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      />
+                    </svg>
+                  </a>
                   <a
                     href="#"
                     className="text-muted-foreground hover:text-primary transition-colors"
