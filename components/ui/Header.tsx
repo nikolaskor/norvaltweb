@@ -163,7 +163,7 @@ export function Header({ className }: { className?: string }) {
             Om oss
           </Link>
           <Link
-            href="/blogg"
+            href="https://norvalt.ghost.io/"
             className="text-sm/6 font-semibold text-secondary hover:text-primary transition-colors"
           >
             Blogg
