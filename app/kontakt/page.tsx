@@ -59,7 +59,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <div className="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+      <div className="isolate bg-white px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
@@ -85,8 +85,8 @@ export default function ContactPage() {
         </div>
 
         {formSubmitted ? (
-          <div className="mx-auto mt-16 max-w-xl bg-green-50 p-8 rounded-lg border border-green-100 text-center">
-            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
+          <div className="mx-auto mt-12 max-w-xl bg-green-50 p-8 rounded-lg border border-green-100 text-center">
+            <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100 mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -121,7 +121,7 @@ export default function ContactPage() {
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="mx-auto mt-16 max-w-xl sm:mt-20"
+            className="mx-auto mt-12 max-w-xl sm:mt-16"
           >
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div>
@@ -131,7 +131,7 @@ export default function ContactPage() {
                 >
                   Fornavn
                 </label>
-                <div className="mt-2.5">
+                <div className="mt-2">
                   <input
                     id="firstName"
                     name="firstName"
@@ -151,7 +151,7 @@ export default function ContactPage() {
                 >
                   Etternavn
                 </label>
-                <div className="mt-2.5">
+                <div className="mt-2">
                   <input
                     id="lastName"
                     name="lastName"
@@ -171,7 +171,7 @@ export default function ContactPage() {
                 >
                   Bedrift
                 </label>
-                <div className="mt-2.5">
+                <div className="mt-2">
                   <input
                     id="company"
                     name="company"
@@ -190,7 +190,7 @@ export default function ContactPage() {
                 >
                   E-post
                 </label>
-                <div className="mt-2.5">
+                <div className="mt-2">
                   <input
                     id="email"
                     name="email"
@@ -210,7 +210,7 @@ export default function ContactPage() {
                 >
                   Telefonnummer
                 </label>
-                <div className="mt-2.5">
+                <div className="mt-2">
                   <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-primary">
                     <span className="flex select-none items-center pl-3 text-gray-500 sm:text-sm">
                       +47
@@ -235,7 +235,7 @@ export default function ContactPage() {
                 >
                   Melding
                 </label>
-                <div className="mt-2.5">
+                <div className="mt-2">
                   <textarea
                     id="message"
                     name="message"
@@ -288,8 +288,8 @@ export default function ContactPage() {
       </div>
 
       {/* Contact Information Section */}
-      <section className="bg-gray-50 py-24">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="bg-gray-50 py-20 lg:py-28">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100 flex flex-col items-center text-center">
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4">
@@ -379,8 +379,8 @@ export default function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-12">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="py-16 lg:py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-white rounded-xl overflow-hidden h-96 shadow-md">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1985.5705210099848!2d10.246949813673336!3d60.154733574920414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4641073b90eacb51%3A0xfad9477e67dd3840!2sDronning%20%C3%85stas%20gate%2016%2C%203511%20H%C3%B8nefoss!5e0!3m2!1sen!2sno!4v1746432455169!5m2!1sen!2sno"

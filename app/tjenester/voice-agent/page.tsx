@@ -20,13 +20,13 @@ export default function VoiceAgentPage() {
       />
 
       {/* Feature Overview */}
-      <Section className="overflow-hidden bg-white py-12 md:py-16 lg:py-24">
+      <Section className="overflow-hidden bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading centered>
             Revolutionize Customer Communication with Voice AI
           </SectionHeading>
 
-          <Grid cols={3} className="mt-10">
+          <Grid cols={3} className="mt-12">
             <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                 <Mic className="w-6 h-6 text-primary" />
@@ -70,11 +70,11 @@ export default function VoiceAgentPage() {
       </Section>
 
       {/* Customer Journey */}
-      <Section className="bg-muted py-12 sm:py-16 md:py-24 lg:py-32">
+      <Section className="bg-muted py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
             <div className="lg:w-1/2">
-              <h2 className="text-base/7 font-semibold text-primary">
+              <h2 className="text-base/7 font-semibold text-primary mb-2">
                 The Future of Voice
               </h2>
               <p className="mt-2 text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-pretty text-secondary">
@@ -89,7 +89,7 @@ export default function VoiceAgentPage() {
               </p>
 
               <div className="mt-8 space-y-4">
-                <div className="flex gap-3">
+                <div className="flex gap-4 items-start">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <Phone className="w-5 h-5 text-primary" />
                   </div>
@@ -103,7 +103,7 @@ export default function VoiceAgentPage() {
                   </div>
                 </div>
 
-                <div className="flex gap-3">
+                <div className="flex gap-4 items-start">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <Headphones className="w-5 h-5 text-primary" />
                   </div>
@@ -117,7 +117,7 @@ export default function VoiceAgentPage() {
                   </div>
                 </div>
 
-                <div className="flex gap-3">
+                <div className="flex gap-4 items-start">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <BookOpen className="w-5 h-5 text-primary" />
                   </div>
@@ -132,7 +132,7 @@ export default function VoiceAgentPage() {
                 </div>
               </div>
 
-              <div className="mt-8">
+              <div className="mt-10">
                 <Button size="lg" className="w-full sm:w-auto">
                   Book a Demo Call
                 </Button>

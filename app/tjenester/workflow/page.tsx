@@ -32,13 +32,13 @@ export default function WorkflowPage() {
       />
 
       {/* Benefits Section */}
-      <Section className="bg-white py-12 md:py-16 lg:py-24">
+      <Section className="bg-white py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading centered>Why Automate Your Workflows</SectionHeading>
 
-          <div className="mt-10 md:mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="bg-white p-6 sm:p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-5">
+          <div className="mt-12 md:mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                 <ClockIcon className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-secondary">
@@ -51,8 +51,8 @@ export default function WorkflowPage() {
               </p>
             </div>
 
-            <div className="bg-white p-6 sm:p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-5">
+            <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                 <RocketLaunchIcon className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-secondary">
@@ -64,8 +64,8 @@ export default function WorkflowPage() {
               </p>
             </div>
 
-            <div className="bg-white p-6 sm:p-8 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-5">
+            <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
                 <CpuChipIcon className="w-6 h-6 text-primary" />
               </div>
               <h3 className="text-xl font-semibold mb-3 text-secondary">
@@ -81,11 +81,11 @@ export default function WorkflowPage() {
       </Section>
 
       {/* Process Mining Section */}
-      <Section id="process-mining" className="bg-muted py-12 md:py-16 lg:py-24">
+      <Section id="process-mining" className="bg-muted py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-center">
             <div className="lg:w-1/2">
-              <h2 className="text-base/7 font-semibold text-primary">
+              <h2 className="text-base/7 font-semibold text-primary mb-2">
                 Process Mining
               </h2>
               <p className="mt-2 text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-pretty text-secondary">
@@ -98,8 +98,8 @@ export default function WorkflowPage() {
                 eye.
               </p>
 
-              <div className="mt-10 space-y-6">
-                <div className="flex gap-4">
+              <div className="mt-8 space-y-6">
+                <div className="flex gap-4 items-start">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <PuzzlePieceIcon className="w-5 h-5 text-primary" />
                   </div>
@@ -114,7 +114,7 @@ export default function WorkflowPage() {
                   </div>
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex gap-4 items-start">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <ChartBarIcon className="w-5 h-5 text-primary" />
                   </div>
@@ -129,7 +129,7 @@ export default function WorkflowPage() {
                   </div>
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex gap-4 items-start">
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                     <ArrowPathIcon className="w-5 h-5 text-primary" />
                   </div>
@@ -153,7 +153,7 @@ export default function WorkflowPage() {
             </div>
 
             <div className="lg:w-1/2 relative">
-              <div className="aspect-video rounded-xl bg-white shadow-xl overflow-hidden p-2 sm:p-3">
+              <div className="aspect-video rounded-xl bg-white shadow-xl overflow-hidden p-3">
                 <div className="w-full h-full bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg relative">
                   {/* Process workflow visualization mockup */}
                   <div className="absolute inset-0 p-4 flex flex-col">
@@ -166,8 +166,8 @@ export default function WorkflowPage() {
                       </div>
                     </div>
 
-                    <div className="flex-1 flex">
-                      <div className="w-1/3 bg-white/70 rounded-l p-2">
+                    <div className="flex-1 flex gap-2">
+                      <div className="w-1/3 bg-white/70 rounded-lg p-2">
                         <div className="h-4 w-3/4 bg-gray-200 rounded mb-2"></div>
                         <div className="h-3 w-1/2 bg-gray-200 rounded mb-4"></div>
                         <div className="space-y-2">
@@ -183,8 +183,8 @@ export default function WorkflowPage() {
                         </div>
                       </div>
 
-                      <div className="w-2/3 bg-white/80 rounded-r p-3">
-                        <div className="mb-3 flex justify-between">
+                      <div className="w-2/3 bg-white/80 rounded-lg p-3">
+                        <div className="mb-3 flex justify-between items-center">
                           <div className="h-4 w-24 bg-gray-200 rounded"></div>
                           <div className="flex space-x-1">
                             <div className="h-4 w-4 bg-gray-200 rounded"></div>

@@ -59,8 +59,8 @@ export default function AboutUs() {
     <>
       {/* Hero Section */}
       <section className="py-20 lg:py-28 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Text Content */}
             <div className="max-w-xl">
               <p className="text-primary font-medium mb-4">Om oss</p>
@@ -113,13 +113,13 @@ export default function AboutUs() {
       </section>
 
       {/* Mission Section */}
-      <section className="py-24 lg:py-32 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Text Content */}
             <div className="max-w-xl">
               <p className="text-primary font-medium mb-4">Vår misjon</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-secondary tracking-tight mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-secondary tracking-tight mb-6">
                 Hvorfor vi eksisterer
               </h2>
               <div className="space-y-6">
@@ -144,7 +144,7 @@ export default function AboutUs() {
             </div>
 
             {/* Stats */}
-            <div className="bg-white rounded-xl border border-gray-100 shadow-lg p-8 lg:p-10">
+            <div className="bg-white rounded-xl border border-gray-100 shadow-lg p-8">
               <div className="grid grid-cols-1 gap-12 md:gap-16">
                 <div className="group">
                   <p className="text-5xl md:text-6xl font-bold text-secondary mb-2 group-hover:text-primary transition-colors duration-300">
@@ -179,8 +179,8 @@ export default function AboutUs() {
       </section>
 
       {/* Image Section beneath Mission */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto">
             <div className="rounded-2xl overflow-hidden shadow-xl">
               <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] w-full">
@@ -193,7 +193,7 @@ export default function AboutUs() {
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
-                  <div className="p-6 md:p-8 lg:p-10 text-white">
+                  <div className="p-6 md:p-8 text-white">
                     <h3 className="text-2xl md:text-3xl font-bold mb-3">
                       Moderne løsninger for fremtidens utfordringer
                     </h3>
@@ -210,8 +210,8 @@ export default function AboutUs() {
       </section>
 
       {/* Our Values Section */}
-      <section className="py-24 lg:py-32 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl lg:text-center mb-16">
             <p className="text-primary font-medium mb-3">Våre verdier</p>
             <h2 className="text-3xl md:text-4xl font-bold text-secondary tracking-tight">
@@ -226,17 +226,17 @@ export default function AboutUs() {
 
           {/* Features Grid - Using styling similar to the service pages */}
           <div className="mx-auto max-w-6xl">
-            <div className="mt-8 grid gap-12 sm:grid-cols-2 lg:grid-cols-4 relative">
+            <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4 relative">
               {/* Decorative gradient blobs */}
-              <div className="absolute -top-10 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-50"></div>
-              <div className="absolute -bottom-20 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-50"></div>
+              <div className="absolute -top-10 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-50 -z-10"></div>
+              <div className="absolute -bottom-20 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-50 -z-10"></div>
 
               {companyValues.map((value, index) => (
                 <div key={value.name} className="relative group">
                   <div className="absolute inset-px rounded-xl bg-white"></div>
                   <div className="relative h-full flex flex-col overflow-hidden rounded-xl border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
                     <div className="px-6 pt-6 pb-3">
-                      <div className="flex items-center justify-center mb-3 lg:justify-start">
+                      <div className="flex items-center justify-center mb-4 lg:justify-start">
                         <div className="p-3 bg-primary/10 rounded-xl text-primary">
                           <value.icon className="w-6 h-6" />
                         </div>
@@ -250,7 +250,7 @@ export default function AboutUs() {
                     </div>
 
                     {/* Decorative background element */}
-                    <div className="absolute bottom-0 right-0 p-6 text-primary/5 transform translate-y-1/4 translate-x-1/4">
+                    <div className="absolute bottom-0 right-0 p-4 text-primary/5 transform translate-y-1/4 translate-x-1/4">
                       <value.icon className="h-24 w-24" />
                     </div>
                   </div>
@@ -263,8 +263,8 @@ export default function AboutUs() {
       </section>
 
       {/* Team Section */}
-      <section className="py-24 lg:py-32 bg-white">
-        <div className="container mx-auto px-4 md:px-6">
+      <section className="py-20 lg:py-28 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl lg:text-center mb-16">
             <p className="text-primary font-medium mb-4">Vårt team</p>
             <h2 className="text-3xl md:text-4xl font-bold text-secondary tracking-tight mb-6">
@@ -278,10 +278,10 @@ export default function AboutUs() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 max-w-5xl mx-auto">
             {teamMembers.map((person) => (
               <div key={person.name} className="group">
-                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-white border border-gray-100 shadow-lg mb-5">
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-white border border-gray-100 shadow-lg mb-6">
                   {/* Fallback to color if image loading fails */}
                   <div className="absolute inset-0 bg-primary/5 flex items-center justify-center">
                     <span className="text-5xl font-bold text-primary/20">

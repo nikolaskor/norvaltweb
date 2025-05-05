@@ -136,11 +136,11 @@ export default function ChatAgentPage() {
       />
 
       {/* Feature Overview */}
-      <Section className="overflow-hidden bg-white py-12 md:py-16 lg:py-24">
+      <Section className="overflow-hidden bg-white py-20 lg:py-28">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 px-4 sm:px-6 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:px-8">
           <div className="lg:pt-4">
             <div className="lg:max-w-lg">
-              <h2 className="text-base/7 font-semibold text-primary">
+              <h2 className="text-base/7 font-semibold text-primary mb-2">
                 AI-powered assistance
               </h2>
               <p className="mt-2 text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-pretty text-secondary">
@@ -151,7 +151,7 @@ export default function ChatAgentPage() {
                 naturally, and guides visitors to the right place — whether it's
                 booking, buying, or getting help.
               </p>
-              <dl className="mt-8 md:mt-10 max-w-xl space-y-6 md:space-y-8 text-base/7 text-muted-foreground lg:max-w-none">
+              <dl className="mt-8 md:mt-10 max-w-xl space-y-6 text-base/7 text-muted-foreground lg:max-w-none">
                 {features.map((feature) => (
                   <div key={feature.name} className="relative pl-9">
                     <dt className="inline font-semibold text-secondary">
@@ -222,7 +222,7 @@ export default function ChatAgentPage() {
                 {isTyping && (
                   <div className="flex justify-start">
                     <div className="max-w-[80%] rounded-xl p-3 bg-muted text-secondary">
-                      <div className="flex gap-1">
+                      <div className="flex gap-1 items-center">
                         <div
                           className="w-2 h-2 rounded-full bg-secondary/40 animate-bounce"
                           style={{ animationDelay: "0ms" }}
@@ -269,7 +269,7 @@ export default function ChatAgentPage() {
       </Section>
 
       {/* How It Works */}
-      <Section className="bg-muted py-16 sm:py-20 md:py-28 lg:py-36">
+      <Section className="bg-muted py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
             <div className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
@@ -277,7 +277,7 @@ export default function ChatAgentPage() {
             </div>
           </div>
 
-          <div className="mx-auto max-w-3xl text-center mt-6 sm:mt-8 md:mt-10">
+          <div className="mx-auto max-w-3xl text-center mt-6 sm:mt-8">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-secondary">
               Getting started is simple
             </h2>
@@ -288,12 +288,12 @@ export default function ChatAgentPage() {
           </div>
 
           {/* Steps Container */}
-          <div className="relative mx-auto mt-16 md:mt-24 lg:mt-28 max-w-6xl">
+          <div className="relative mx-auto mt-16 lg:mt-20 max-w-6xl">
             {/* Connection Line - Only visible on lg screens */}
             <div className="hidden lg:block absolute top-[4.5rem] left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-1 bg-gradient-to-r from-primary/10 via-primary/30 to-primary/10 rounded-full" />
 
             {/* Steps */}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 sm:gap-12 lg:gap-8 relative">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-8 relative">
               {/* Step 1 */}
               <div className="group relative z-10">
                 <div className="absolute -inset-4 scale-95 bg-gradient-to-b from-primary/5 to-transparent opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 rounded-3xl" />
@@ -435,12 +435,12 @@ export default function ChatAgentPage() {
 
       {/* Features in Detail */}
       <Section
-        className="bg-white py-16 sm:py-20 md:py-28 lg:py-36 overflow-hidden"
+        className="bg-white py-20 lg:py-28 overflow-hidden"
         id="features"
       >
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center mb-16 md:mb-24">
+          <div className="text-center mb-16">
             <div className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary mb-4">
               Advanced capabilities
             </div>
@@ -450,10 +450,10 @@ export default function ChatAgentPage() {
           </div>
 
           {/* Features Grid */}
-          <div className="mt-8 sm:mt-10 md:mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 relative">
+          <div className="mt-12 md:mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 relative">
             {/* Decorative gradient blobs */}
-            <div className="absolute -top-10 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-50"></div>
-            <div className="absolute -bottom-20 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-50"></div>
+            <div className="absolute -top-10 -left-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-50 -z-10"></div>
+            <div className="absolute -bottom-20 -right-40 w-80 h-80 bg-primary/5 rounded-full blur-3xl opacity-50 -z-10"></div>
 
             {/* Feature 1 - Human-like Conversations */}
             <div className="relative lg:row-span-2 sm:col-span-2 lg:col-span-1 group/chat">
@@ -532,8 +532,8 @@ export default function ChatAgentPage() {
             <div className="relative max-lg:row-start-1 group">
               <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-t-[2rem]"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-xl max-lg:rounded-t-[2rem] border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="px-6 sm:px-8 pt-6 sm:pt-8">
-                  <div className="flex items-center justify-center mb-3 lg:justify-start">
+                <div className="px-6 pt-6 pb-3">
+                  <div className="flex items-center justify-center mb-4 lg:justify-start">
                     <div className="p-3 bg-primary/10 rounded-xl text-primary">
                       <Globe className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
@@ -548,7 +548,7 @@ export default function ChatAgentPage() {
                 </div>
 
                 {/* Language Flags */}
-                <div className="flex flex-1 items-center justify-center px-4 sm:px-8 max-lg:pt-4 max-lg:pb-8 sm:px-10 lg:pb-2">
+                <div className="flex flex-1 items-center justify-center p-6">
                   <div className="grid grid-cols-3 gap-3 sm:gap-4 w-full max-w-xs">
                     {["🇳🇴", "🇬🇧", "🇸🇪", "🇩🇰", "🇫🇮", "🇩🇪"].map((flag, i) => (
                       <div
@@ -568,8 +568,8 @@ export default function ChatAgentPage() {
             <div className="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2 group">
               <div className="absolute inset-px rounded-lg bg-white"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-xl border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="px-6 sm:px-8 pt-6 sm:pt-8">
-                  <div className="flex items-center justify-center mb-3 lg:justify-start">
+                <div className="px-6 pt-6 pb-3">
+                  <div className="flex items-center justify-center mb-4 lg:justify-start">
                     <div className="p-3 bg-primary/10 rounded-xl text-primary">
                       <BookOpen className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
@@ -584,7 +584,7 @@ export default function ChatAgentPage() {
                 </div>
 
                 {/* Knowledge Base Visualization */}
-                <div className="@container flex flex-1 items-center justify-center max-lg:py-4 lg:pb-2">
+                <div className="@container flex flex-1 items-center justify-center p-6">
                   <div className="w-full max-w-[160px] sm:max-w-[200px] aspect-square rounded-xl bg-muted/50 p-5 sm:p-6 transform transition-transform duration-300 hover:scale-105">
                     <div className="w-full h-full border-2 border-dashed border-primary/40 rounded-lg flex items-center justify-center">
                       <div className="text-center p-3">
@@ -608,8 +608,8 @@ export default function ChatAgentPage() {
             <div className="relative lg:row-span-2 sm:col-span-2 lg:col-span-1 group">
               <div className="absolute inset-px rounded-lg bg-white max-lg:rounded-b-[2rem] lg:rounded-r-[2rem]"></div>
               <div className="relative flex h-full flex-col overflow-hidden rounded-xl max-lg:rounded-b-[2rem] lg:rounded-r-[2rem] border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                <div className="px-6 sm:px-8 pt-6 sm:pt-8 pb-3">
-                  <div className="flex items-center justify-center max-lg:mb-3 lg:justify-start">
+                <div className="px-6 pt-6 pb-3">
+                  <div className="flex items-center justify-center mb-4 lg:justify-start">
                     <div className="p-3 bg-primary/10 rounded-xl text-primary">
                       <Clock className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
@@ -624,7 +624,7 @@ export default function ChatAgentPage() {
                 </div>
 
                 {/* Clock Visualization */}
-                <div className="relative min-h-[16rem] sm:min-h-[24rem] w-full grow flex items-center justify-center">
+                <div className="relative min-h-[16rem] sm:min-h-[24rem] w-full grow flex items-center justify-center p-6">
                   <div className="w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full bg-white shadow-lg flex items-center justify-center relative group-hover:scale-105 transition-transform duration-500">
                     <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 rounded-full border-6 md:border-8 border-primary/20 flex items-center justify-center relative">
                       <div className="w-32 h-32 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-full bg-white shadow-md flex flex-col items-center justify-center transform group-hover:rotate-12 transition-transform duration-1000">
@@ -661,7 +661,7 @@ export default function ChatAgentPage() {
       </Section>
 
       {/* FAQ Section */}
-      <Section className="bg-muted py-12 sm:py-16 md:py-24 lg:py-32">
+      <Section className="bg-muted py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex justify-center">
             <h2 className="text-center text-base/7 font-semibold text-primary">
@@ -678,7 +678,7 @@ export default function ChatAgentPage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-8 sm:mt-12 md:mt-16 max-w-3xl space-y-3 sm:space-y-4">
+          <div className="mx-auto mt-12 md:mt-16 max-w-3xl space-y-4">
             {[
               {
                 question: "Can it understand Norwegian?",
@@ -715,7 +715,7 @@ export default function ChatAgentPage() {
                     <AccordionTrigger className="flex w-full items-center justify-between px-4 sm:px-6 py-3 sm:py-4 text-left text-base sm:text-lg font-semibold text-secondary hover:bg-gray-50">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="px-4 sm:px-6 pb-3 sm:pb-4 text-sm sm:text-base text-muted-foreground">
+                    <AccordionContent className="px-4 sm:px-6 pb-4 text-sm sm:text-base text-muted-foreground">
                       <p>{faq.answer}</p>
                     </AccordionContent>
                   </AccordionItem>
