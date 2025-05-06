@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Section, SectionHeading, Grid, FadeIn } from "@/components/ui/Section";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import { Clock, BookOpen, Mic, Speaker, Phone, Headphones } from "lucide-react";
 import { ServiceHero } from "@/components/ui/ServiceHero";
 

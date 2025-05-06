@@ -2,8 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Section, SectionHeading, Grid, FadeIn } from "@/components/ui/Section";
-import { Card, CardHeader } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 import {
   Bot,
   Clock,
@@ -23,7 +22,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/Accordion";
 import { ServiceHero } from "@/components/ui/ServiceHero";
-import { motion } from "framer-motion";
 
 export default function ChatAgentPage() {
   const features = [

@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import { HeroVideoDialog } from "@/components/ui/HeroVideoDialog";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/ui/button";
 
 export function VideoSection() {
   return (
