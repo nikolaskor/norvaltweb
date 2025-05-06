@@ -1,115 +1,86 @@
+import * as React from "react";
+
 import { cn } from "@/lib/utils";
-import React from "react";
-import { FadeIn } from "./Section";
 
-interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-  children: React.ReactNode;
-  className?: string;
-  variant?: "default" | "outline" | "muted";
-  animate?: boolean;
-}
+const Card = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "rounded-lg border border-gray-200 bg-white text-secondary shadow-sm",
+      className
+    )}
+    {...props}
+  />
+));
+Card.displayName = "Card";
 
-/**
- * A consistent card component for displaying content
- */
-export function Card({
-  children,
-  className,
-  variant = "default",
-  animate = true,
-  ...props
-}: CardProps) {
-  const variantStyles = {
-    default: "bg-white shadow-sm",
-    outline: "border border-muted",
-    muted: "bg-muted/30 border border-muted",
-  };
+const CardHeader = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex flex-col space-y-1.5 p-6", className)}
+    {...props}
+  />
+));
+CardHeader.displayName = "CardHeader";
 
-  const Component = animate ? FadeIn : "div";
+const CardTitle = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLHeadingElement>
+>(({ className, ...props }, ref) => (
+  <h3
+    ref={ref}
+    className={cn(
+      "text-2xl font-semibold leading-none tracking-tight",
+      className
+    )}
+    {...props}
+  />
+));
+CardTitle.displayName = "CardTitle";
 
-  return (
-    <Component
-      className={cn(
-        "rounded-lg sm:rounded-xl p-4 sm:p-5 lg:p-6",
-        variantStyles[variant],
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </Component>
-  );
-}
+const CardDescription = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <p
+    ref={ref}
+    className={cn("text-sm text-muted-foreground", className)}
+    {...props}
+  />
+));
+CardDescription.displayName = "CardDescription";
 
-/**
- * Card header component with icon support
- */
-export function CardHeader({
-  children,
-  icon,
-  title,
-  description,
-  className,
-}: {
-  children?: React.ReactNode;
-  icon?: React.ReactNode;
-  title?: React.ReactNode;
-  description?: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <div className={cn("flex flex-col mb-3 sm:mb-4", className)}>
-      {icon && (
-        <div className="p-2 sm:p-3 bg-primary/10 rounded-lg w-fit text-primary mb-3 sm:mb-4">
-          {icon}
-        </div>
-      )}
-      {title && (
-        <h3 className="text-lg sm:text-xl font-semibold text-secondary mb-1">
-          {title}
-        </h3>
-      )}
-      {description && (
-        <p className="text-sm sm:text-base text-muted-foreground">
-          {description}
-        </p>
-      )}
-      {children}
-    </div>
-  );
-}
+const CardContent = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+));
+CardContent.displayName = "CardContent";
 
-/**
- * Card content component
- */
-export function CardContent({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return <div className={cn("", className)}>{children}</div>;
-}
+const CardFooter = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex items-center p-6 pt-0", className)}
+    {...props}
+  />
+));
+CardFooter.displayName = "CardFooter";
 
-/**
- * Card footer component
- */
-export function CardFooter({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) {
-  return (
-    <div
-      className={cn(
-        "mt-3 sm:mt-4 flex flex-wrap items-center gap-2 sm:gap-3",
-        className
-      )}
-    >
-      {children}
-    </div>
-  );
-}
+export {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+};

@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { Section, SectionHeading, Grid, FadeIn } from "@/components/ui/Section";
-import { Card, CardHeader } from "@/components/ui/card";
+import { Card, CardHeader } from "@/components/ui/Card";
 import { Button } from "@/components/ui/button";
 import {
   Bot,
@@ -21,7 +21,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/components/ui/accordation";
 import { ServiceHero } from "@/components/ui/ServiceHero";
 import { motion } from "framer-motion";
 
