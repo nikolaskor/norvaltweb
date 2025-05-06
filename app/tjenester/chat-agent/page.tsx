@@ -20,7 +20,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/Accordion";
+} from "@/components/ui/accordion";
 import { ServiceHero } from "@/components/ui/ServiceHero";
 
 export default function ChatAgentPage() {

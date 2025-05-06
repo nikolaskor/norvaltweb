@@ -1,7 +1,8 @@
 import { cn } from "@/lib/utils";
-import { motion, MotionProps } from "framer-motion";
+import { motion, MotionProps, HTMLMotionProps } from "framer-motion";
 import React from "react";
 
+// Separating the specific props for our Section component
 interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
   className?: string;
@@ -23,8 +24,8 @@ export function Section({
   motionProps,
   ...props
 }: SectionProps) {
-  const Component = animate ? motion[as] : as;
-  const animationProps = animate
+  // Create animation props if animation is enabled
+  const animationProps: MotionProps = animate
     ? {
         initial: "hidden",
         whileInView: "visible",
@@ -41,19 +42,77 @@ export function Section({
       }
     : {};
 
-  return (
-    <Component
-      className={cn("py-10 sm:py-12 md:py-16 lg:py-24", className)}
-      {...animationProps}
-      {...props}
-    >
-      {container ? (
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">{children}</div>
-      ) : (
-        children
-      )}
-    </Component>
+  // Prepare the container content
+  const containerContent = container ? (
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8">{children}</div>
+  ) : (
+    children
   );
+
+  // Extract HTML attributes that are safe to pass to both standard and motion components
+  const { id, role, tabIndex, style, onClick, onMouseEnter, onMouseLeave } =
+    props;
+  const safeHtmlProps = {
+    id,
+    role,
+    tabIndex,
+    style,
+    onClick,
+    onMouseEnter,
+    onMouseLeave,
+  };
+
+  // Filter out undefined values
+  const filteredProps = Object.fromEntries(
+    Object.entries(safeHtmlProps).filter((entry) => entry[1] !== undefined)
+  );
+
+  // Render the appropriate element type based on animation preference
+  if (animate) {
+    // For animated components
+    if (as === "section") {
+      return (
+        <motion.section
+          className={cn("py-10 sm:py-12 md:py-16 lg:py-24", className)}
+          {...filteredProps}
+          {...animationProps}
+        >
+          {containerContent}
+        </motion.section>
+      );
+    } else if (as === "div") {
+      return (
+        <motion.div
+          className={cn("py-10 sm:py-12 md:py-16 lg:py-24", className)}
+          {...filteredProps}
+          {...animationProps}
+        >
+          {containerContent}
+        </motion.div>
+      );
+    } else {
+      return (
+        <motion.article
+          className={cn("py-10 sm:py-12 md:py-16 lg:py-24", className)}
+          {...filteredProps}
+          {...animationProps}
+        >
+          {containerContent}
+        </motion.article>
+      );
+    }
+  } else {
+    // For non-animated components
+    const Component = as;
+    return (
+      <Component
+        className={cn("py-10 sm:py-12 md:py-16 lg:py-24", className)}
+        {...props}
+      >
+        {containerContent}
+      </Component>
+    );
+  }
 }
 
 const fadeIn = {
@@ -75,8 +134,7 @@ export function FadeIn({
 }: {
   children: React.ReactNode;
   className?: string;
-  [key: string]: any;
-}) {
+} & Omit<HTMLMotionProps<"div">, "children" | "className">) {
   return (
     <motion.div variants={fadeIn} className={className} {...props}>
       {children}
