@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
 import { Label } from "@/components/ui/Label";
 import { Switch } from "@/components/ui/Switch";

@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import { Section, SectionHeading, Grid, FadeIn } from "@/components/ui/Section";
-import { Card, CardHeader } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardHeader } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
 import {
   Bot,
   Clock,
@@ -21,7 +21,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "@/components/ui/Accordion";
 import { ServiceHero } from "@/components/ui/ServiceHero";
 import { motion } from "framer-motion";
 
