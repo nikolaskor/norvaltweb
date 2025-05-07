@@ -37,7 +37,7 @@ export function VideoSection() {
         <div className="max-w-4xl mx-auto mb-8 md:mb-12 relative">
           <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 via-transparent to-secondary/20 rounded-xl blur-lg opacity-50"></div>
           <HeroVideoDialog
-            videoSrc="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+            videoSrc="https://www.youtube.com/embed/NpEaa2P7qZI?si=1eFfJ15feYD7TyEh"
             thumbnailSrc="/images/automation-demo-thumbnail.jpg"
             thumbnailAlt="Norvalt Automation Demo"
             animationStyle="from-bottom"
