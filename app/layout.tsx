@@ -89,6 +89,22 @@ export default function RootLayout({
   return (
     <html lang="en" className="bg-white">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Google tag (gtag.js) */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-0EFS3MW1TC"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-0EFS3MW1TC');
+          `,
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
