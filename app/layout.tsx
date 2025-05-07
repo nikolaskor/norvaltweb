@@ -106,8 +106,18 @@ export default function RootLayout({
         />
       </head>
       <body className={`${manrope.variable} font-sans bg-white`}>
+        <a
+          href="#main-content"
+          className="absolute left-2 top-2 z-50 px-4 py-2 bg-primary text-white rounded focus:translate-y-0 focus:outline-none focus:ring-2 focus:ring-primary transition-transform -translate-y-20 focus:-translate-y-0 sr-only focus:not-sr-only"
+          tabIndex={0}
+          aria-label="Hopp til hovedinnhold"
+        >
+          Hopp til hovedinnhold
+        </a>
         <Header />
-        <main className="min-h-screen">{children}</main>
+        <main id="main-content" className="min-h-screen" role="main">
+          {children}
+        </main>
         <CtaSection />
         <MainFooter />
       </body>
