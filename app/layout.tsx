@@ -47,6 +47,38 @@ export const metadata: Metadata = {
     },
   ],
   themeColor: "#ffffff",
+  openGraph: {
+    title: "Norvalt - Digital Solutions",
+    description:
+      "Norvalt leverer digitale løsninger og AI-tjenester for norske bedrifter.",
+    url: "https://norvalt.no",
+    siteName: "Norvalt",
+    images: [
+      {
+        url: "/images/photo-1529156069898-49953e39b3ac.avif",
+        width: 1200,
+        height: 630,
+        alt: "Norvalt - Fremtidens arbeidsplass",
+      },
+    ],
+    locale: "no_NO",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Norvalt - Digital Solutions",
+    description:
+      "Norvalt leverer digitale løsninger og AI-tjenester for norske bedrifter.",
+    images: ["/images/photo-1529156069898-49953e39b3ac.avif"],
+    site: "@norvalt",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "https://norvalt.no",
+  },
 };
 
 export default function RootLayout({
@@ -56,6 +88,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="bg-white">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Norvalt",
+              url: "https://norvalt.no",
+              logo: "/logos/norvalt-logo-color.png",
+              description:
+                "Norvalt leverer digitale løsninger og AI-tjenester for norske bedrifter.",
+              sameAs: ["https://www.linkedin.com/company/norvalt/"],
+            }),
+          }}
+        />
+      </head>
       <body className={`${manrope.variable} font-sans bg-white`}>
         <Header />
         <main className="min-h-screen">{children}</main>
