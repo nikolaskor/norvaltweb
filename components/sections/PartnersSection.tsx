@@ -4,54 +4,37 @@ import { cn } from "@/lib/utils";
 
 // Placeholder logo data - replace with actual partner logos if available
 const logos = [
+  { id: "aws", description: "AWS", image: "/partners%20logos/aws.png" },
   {
-    id: "logo-2",
-    description: "Figma",
-    image: "https://www.shadcnblocks.com/images/block/logos/figma.svg",
-    className: "h-7 w-auto",
+    id: "voiceflow",
+    description: "Voiceflow",
+    image: "/partners%20logos/Voiceflow Logo.png",
+  },
+  { id: "n8n", description: "N8n", image: "/partners%20logos/N8n Logo.png" },
+  {
+    id: "ellevenlabs",
+    description: "Ellevenlabs",
+    image: "/partners%20logos/Ellevenlabs Logo.svg",
   },
   {
-    id: "logo-3",
-    description: "Next.js",
-    image: "https://www.shadcnblocks.com/images/block/logos/nextjs.svg",
-    className: "h-7 w-auto",
+    id: "gemini",
+    description: "Gemini",
+    image: "/partners%20logos/Gemini Logo.png",
   },
   {
-    id: "logo-6",
-    description: "Supabase",
-    image: "https://www.shadcnblocks.com/images/block/logos/supabase.svg",
-    className: "h-7 w-auto",
+    id: "make",
+    description: "Make",
+    image: "/partners%20logos/Make Logo RGB.webp",
   },
   {
-    id: "logo-8",
-    description: "Vercel",
-    image: "https://www.shadcnblocks.com/images/block/logos/vercel.svg",
-    className: "h-7 w-auto",
-  },
-  // Add more logos as needed, repeating the structure
-  {
-    id: "logo-2-repeat",
-    description: "Figma",
-    image: "https://www.shadcnblocks.com/images/block/logos/figma.svg",
-    className: "h-7 w-auto",
+    id: "airtable",
+    description: "Airtable",
+    image: "/partners%20logos/Airtable Logo.png",
   },
   {
-    id: "logo-3-repeat",
-    description: "Next.js",
-    image: "https://www.shadcnblocks.com/images/block/logos/nextjs.svg",
-    className: "h-7 w-auto",
-  },
-  {
-    id: "logo-6-repeat",
-    description: "Supabase",
-    image: "https://www.shadcnblocks.com/images/block/logos/supabase.svg",
-    className: "h-7 w-auto",
-  },
-  {
-    id: "logo-8-repeat",
-    description: "Vercel",
-    image: "https://www.shadcnblocks.com/images/block/logos/vercel.svg",
-    className: "h-7 w-auto",
+    id: "chatgpt",
+    description: "ChatGPT",
+    image: "/partners%20logos/ChatGPT Logo (1).png",
   },
 ];
 
@@ -85,7 +68,7 @@ export function PartnersSection() {
           </p>
         </div>
 
-        <div className="relative h-[80px] sm:h-[100px] w-full overflow-hidden rounded-xl shadow-md bg-white/50 backdrop-blur-sm p-2">
+        <div className="relative h-[80px] sm:h-[100px] w-[90%] mx-auto overflow-hidden rounded-xl shadow-md bg-white/50 backdrop-blur-sm p-2">
           <InfiniteSlider
             className="flex h-full w-full items-center"
             duration={40}
@@ -94,15 +77,12 @@ export function PartnersSection() {
             {logos.map((logo) => (
               <div
                 key={logo.id}
-                className="flex w-24 sm:w-32 items-center justify-center"
+                className="flex h-10 w-24 items-center justify-center px-2 sm:px-4"
               >
                 <img
                   src={logo.image}
                   alt={logo.description}
-                  className={cn(
-                    logo.className,
-                    "h-5 sm:h-7 w-auto opacity-80 hover:opacity-100 transition-opacity"
-                  )}
+                  className="max-h-full max-w-[120%] object-contain opacity-80 hover:opacity-100 transition-opacity"
                   loading="lazy"
                 />
               </div>

@@ -127,8 +127,8 @@ export default function ChatAgentPage() {
         primaryAction={{ text: "Get a Free Demo" }}
         secondaryAction={{ text: "Book a Call" }}
         badge={{
-          text: "New feature",
-          linkText: "Learn more",
+          text: "Meld på",
+          linkText: "webinar",
           href: "#features",
         }}
       />

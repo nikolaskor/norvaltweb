@@ -43,10 +43,12 @@ function Hero() {
         <div className="flex gap-4 md:gap-8 py-8 md:py-12 items-center justify-center flex-col">
           <div>
             <div className="relative rounded-full px-3 py-1 text-sm/6 text-secondary ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-              <span>New feature</span>{" "}
-              <a href="#features" className="font-semibold text-primary">
-                <span aria-hidden="true" className="absolute inset-0" />
-                Learn more <span aria-hidden="true">&rarr;</span>
+              <span>Meld deg på </span>
+              <a
+                href="/webinar"
+                className="font-semibold text-primary underline underline-offset-2"
+              >
+                AI Webinar
               </a>
             </div>
           </div>
